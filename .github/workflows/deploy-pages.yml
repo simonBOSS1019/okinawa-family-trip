@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "site-bundle.zip"
+      - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
 permissions:

@@ -1,0 +1,211 @@
+{
+  "title": "沖繩藍海慢活五日",
+  "startDate": "2026-11-15",
+  "endDate": "2026-11-19",
+  "adults": 4,
+  "children": 1,
+  "rentalCar": "Toyota Voxy",
+  "rentalCompany": "Relaxレンタカー 若狹店",
+  "outboundFlight": "IT796｜預計 17:30 抵達那霸",
+  "returnFlight": "IT797｜13:30 起飛",
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-11-15",
+      "dateLabel": "11/15（日）",
+      "title": "初見沖繩｜抵達那霸",
+      "summary": "搭乘 IT796 抵達那霸，首晚以晚餐、入住與休息為主，不安排密集景點。",
+      "routeName": "那霸機場 → 福州園 Garden Cafe → APA Hotel",
+      "routeQuery": "Naha Airport Okinawa;Fukushuen Garden Cafe Naha;APA Hotel Naha Kuko Wakasa",
+      "stops": [
+        {
+          "time": "17:30",
+          "name": "那霸機場抵達",
+          "note": "IT796 預計抵達時間；入境、領行李與交通時間需另留緩衝。",
+          "status": "已知資訊"
+        },
+        {
+          "time": "待確認",
+          "name": "福州園 Garden Cafe",
+          "note": "晚餐安排；需確認當日營業時間與抵達後是否來得及用餐。",
+          "status": "待確認"
+        },
+        {
+          "time": "晚間",
+          "name": "APA Hotel Naha Kuko Wakasa",
+          "note": "首晚住宿，辦理入住後休息。",
+          "status": "住宿已列入行程"
+        }
+      ],
+      "stay": "APA Hotel Naha Kuko Wakasa"
+    },
+    {
+      "day": 2,
+      "date": "2026-11-16",
+      "dateLabel": "11/16（一）",
+      "title": "南部探索｜一路北上名護",
+      "summary": "從南部出發，走玉泉洞與奧武島，再到 JA やんばる市場，北上入住名護。晚餐在琉之國本店與 TOPU 之間二選一。",
+      "routeName": "APA Hotel → 玉泉洞 → 奧武島玻璃船 → JA やんばる市場 → Sunset Resort",
+      "routeQuery": "APA Hotel Naha Kuko Wakasa;Gyokusendo Okinawa;Ojima Island Nanjo Okinawa glass boat;JA Yanbaru Market Nago;Sunset Resort Canphou by Coldio Premium",
+      "stops": [
+        {
+          "time": "上午",
+          "name": "Relaxレンタカー 若狹店取車",
+          "note": "Toyota Voxy；取車安排在 11/16。確切取車時間待確認。",
+          "status": "已知安排"
+        },
+        {
+          "time": "待確認",
+          "name": "玉泉洞",
+          "note": "南部主要景點；停留時間與票券資訊待核對。",
+          "status": "景點已列入"
+        },
+        {
+          "time": "待確認",
+          "name": "奧武島玻璃船",
+          "note": "需確認班次、海況與營運時間。",
+          "status": "待確認"
+        },
+        {
+          "time": "待確認",
+          "name": "JA やんばる市場",
+          "note": "北上途中採買與補給。",
+          "status": "景點已列入"
+        },
+        {
+          "time": "晚餐",
+          "name": "琉之國本店／TOPU（二選一）",
+          "note": "晚餐候選，尚未決定最終選項。",
+          "status": "待決定"
+        },
+        {
+          "time": "晚間",
+          "name": "唐吉訶德",
+          "note": "依體力與營業時間安排採買。",
+          "status": "彈性行程"
+        }
+      ],
+      "stay": "Sunset Resort Canphou by Coldio Premium"
+    },
+    {
+      "day": 3,
+      "date": "2026-11-17",
+      "dateLabel": "11/17（二）",
+      "title": "海洋探索與親子創作",
+      "summary": "以美麗海水族館為主軸，安排海邊停留、風獅爺創作與園區活動，晚上到 THE BIG EXPRESS 採買後回住宿自煮。",
+      "routeName": "Sunset Resort → 美麗海水族館 → 憩いの浜 → Maimai Shisa → 海洋博公園 P8 → THE BIG EXPRESS → Sunset Resort",
+      "routeQuery": "Sunset Resort Canphou by Coldio Premium;Okinawa Churaumi Aquarium;憩いの浜 Okinawa;Maimai Shisa Okinawa;Okinawa Ocean Expo Park P8;THE BIG EXPRESS Motobu",
+      "stops": [
+        {
+          "time": "上午",
+          "name": "美麗海水族館",
+          "note": "當日主要景點；需依開館時間及想看的展區安排停留。",
+          "status": "已知安排"
+        },
+        {
+          "time": "午餐",
+          "name": "INOH",
+          "note": "水族館／園區用餐安排；需核對餐廳名稱、位置與營業時間。",
+          "status": "待確認"
+        },
+        {
+          "time": "下午",
+          "name": "憩いの浜",
+          "note": "安排海邊散步與休息，視天候調整。",
+          "status": "已知安排"
+        },
+        {
+          "time": "下午",
+          "name": "Maimai Shisa",
+          "note": "親子風獅爺創作體驗；需確認預約時段。",
+          "status": "待確認"
+        },
+        {
+          "time": "下午",
+          "name": "海洋博公園 P8／Aqua Town",
+          "note": "依原行程中的園區活動與停車安排執行；Aqua Town 詳細位置需核對。",
+          "status": "待確認"
+        },
+        {
+          "time": "傍晚",
+          "name": "THE BIG EXPRESS 本部店",
+          "note": "採買晚餐與隔日用品，回住宿自煮。",
+          "status": "已知安排"
+        }
+      ],
+      "stay": "Sunset Resort Canphou by Coldio Premium"
+    },
+    {
+      "day": 4,
+      "date": "2026-11-18",
+      "dateLabel": "11/18（三）",
+      "title": "北部慢遊｜回到那霸",
+      "summary": "退房後前往名護市區，再到萬座毛與 AEON 來客夢，傍晚返回那霸入住。",
+      "routeName": "Sunset Resort → 名護 21 世紀之森 → 萬座毛 → AEON 來客夢 → Glory Island",
+      "routeQuery": "Sunset Resort Canphou by Coldio Premium;Nago 21st Century Forest Park;Cape Manzamo Okinawa;AEON MALL Okinawa Rycom;Glory Island Okinawa SOBE",
+      "stops": [
+        {
+          "time": "上午",
+          "name": "名護 21 世紀之森",
+          "note": "公園散步與親子活動；需依天候調整。",
+          "status": "已知安排"
+        },
+        {
+          "time": "中午／下午",
+          "name": "萬座毛",
+          "note": "海岸景觀，停留時間待確認。",
+          "status": "已知安排"
+        },
+        {
+          "time": "下午",
+          "name": "AEON 來客夢",
+          "note": "購物、用餐與採買；需預留開車回那霸時間。",
+          "status": "已知安排"
+        },
+        {
+          "time": "晚間",
+          "name": "Glory Island Okinawa SOBE",
+          "note": "那霸住宿。",
+          "status": "住宿已列入"
+        }
+      ],
+      "stay": "Glory Island Okinawa SOBE"
+    },
+    {
+      "day": 5,
+      "date": "2026-11-19",
+      "dateLabel": "11/19（四）",
+      "title": "返程日｜分流前往機場",
+      "summary": "租車組先完成還車，長輩與小孩可依行李和體力分流前往機場，約 10:45–11:00 會合；IT797 13:30 起飛。",
+      "routeName": "Glory Island → Relaxレンタカー 若狹店／那霸機場",
+      "routeQuery": "Glory Island Okinawa SOBE;Relax Rent-a-car Wakasa Naha;Naha Airport Okinawa",
+      "stops": [
+        {
+          "time": "退房後",
+          "name": "行李整理與退房",
+          "note": "先確認行李、證件與航班資訊。",
+          "status": "已知安排"
+        },
+        {
+          "time": "10:00 前",
+          "name": "Relaxレンタカー 若狹店還車",
+          "note": "Toyota Voxy；需預留加油、驗車與接駁時間。",
+          "status": "已知目標時間"
+        },
+        {
+          "time": "約 10:45–11:00",
+          "name": "那霸機場會合",
+          "note": "租車組與長輩／小孩組會合；分流交通方式需按當日行李量確認。",
+          "status": "已知安排"
+        },
+        {
+          "time": "13:30",
+          "name": "IT797 起飛",
+          "note": "回程航班；建議再次核對航空公司報到截止時間。",
+          "status": "已知資訊"
+        }
+      ],
+      "stay": "返台"
+    }
+  ]
+}

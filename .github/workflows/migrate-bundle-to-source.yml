@@ -1,6 +1,11 @@
 name: Prepare source-layout migration
 
 on:
+  push:
+    branches:
+      - migration/source-layout
+    paths:
+      - ".github/workflows/migrate-bundle-to-source.yml"
   workflow_dispatch:
 
 permissions:
@@ -29,10 +34,10 @@ jobs:
           test -f _migration_extract/index.html
           test -f _migration_extract/trip-data.json
           test -d _migration_extract/assets
-          mkdir -p assets data
           cp _migration_extract/index.html ./index.html
           cp _migration_extract/control-panel.html ./control-panel.html
           cp _migration_extract/trip-data.json ./trip-data.json
+          mkdir -p assets
           cp -a _migration_extract/assets/. ./assets/
           cp _migration_extract/README.md ./SITE-README.md
           rm -rf _migration_extract

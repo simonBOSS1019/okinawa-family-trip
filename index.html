@@ -57,7 +57,7 @@ function renderDetail(){const d=data[selected];detail.innerHTML=`<div class="tit
 let viewMode="day";
 function showView(mode){viewMode=mode;const itinerary=document.querySelector('.grid');const important=document.getElementById('important-info');const cost=document.getElementById('cost-calculator');const detailPanel=document.querySelector('.grid > section.panel');const side=document.querySelector('.grid > aside.panel');const otherPanels=[...document.querySelectorAll('main > .panel:not(#important-info):not(#cost-calculator)')];
  if(mode==="day"){itinerary.style.display="grid";detailPanel.style.display="";side.style.display="";important.hidden=true;cost.hidden=true;otherPanels.forEach(p=>p.style.display="");renderDetail();renderBottomTabs();}
- else {itinerary.style.display="grid";detailPanel.style.display="none";side.style.display="none";otherPanels.forEach(p=>p.style.display="none");important.hidden=mode!=="info";cost.hidden=mode!=="cost";const target=mode==="info"?important:cost;const back=target.querySelector('.page-back');if(!back){const b=document.createElement('button');b.className='page-back';b.type='button';b.textContent='返回';b.onclick=()=>showView('day');target.insertBefore(b,target.firstChild);} }
+ else {itinerary.style.display="grid";detailPanel.style.display="none";side.style.display="none";otherPanels.forEach(p=>p.style.display="none");important.hidden=mode!=="info";cost.hidden=mode!=="cost";const target=mode==="info"?important:cost; }
  renderTabs();if(mode==="day")renderDetail();const destination=mode==="day"?document.getElementById("detail"):mode==="info"?important:cost;destination.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderBottomTabs(){
@@ -68,4 +68,4 @@ function renderBottomTabs(){
 }
 function render(){renderTabs();renderDetail();renderBottomTabs()}
 render();
-</script><a class="floating-top" href="#itinerary-detail" aria-label="返回五日行程選擇區">← <span>返回</span></a></body></html>
+</script><a class="floating-top" href="#itinerary-detail" aria-label="返回行程選擇區">↩️ <span>返回行程</span></a></body></html>

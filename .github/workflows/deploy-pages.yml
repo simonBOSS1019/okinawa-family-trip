@@ -5,7 +5,10 @@ on:
     branches:
       - main
     paths:
-      - "site-bundle.zip"
+      - "index.html"
+      - "control-panel.html"
+      - "trip-data.json"
+      - "assets/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -28,22 +31,17 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Extract website bundle
+      - name: Validate source website
         run: |
-          test -f site-bundle.zip || {
-            echo "Missing site-bundle.zip. Upload the complete website ZIP to the repository root."
-            exit 1
-          }
+          set -euo pipefail
+          test -f index.html
+          test -f control-panel.html
+          test -f trip-data.json
+          test -d assets
           mkdir -p _site
-          unzip -q site-bundle.zip -d _site
-          test -f _site/index.html || {
-            echo "The ZIP must contain index.html at its top level."
-            exit 1
-          }
-          test -d _site/assets || {
-            echo "The ZIP is missing the assets folder."
-            exit 1
-          }
+          cp index.html control-panel.html trip-data.json _site/
+          cp -a assets _site/assets
+          test -f _site/assets/cover.png
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

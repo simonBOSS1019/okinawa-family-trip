@@ -3,7 +3,7 @@ name: Prepare source-layout migration
 on:
   push:
     branches:
-      - main
+      - migration/source-layout
     paths:
       - ".github/workflows/migrate-bundle-to-source.yml"
   workflow_dispatch:

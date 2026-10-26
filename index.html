@@ -58,13 +58,13 @@ let viewMode="day";
 function showView(mode){viewMode=mode;const itinerary=document.querySelector('.grid');const important=document.getElementById('important-info');const cost=document.getElementById('cost-calculator');const detailPanel=document.querySelector('.grid > section.panel');const side=document.querySelector('.grid > aside.panel');const otherPanels=[...document.querySelectorAll('main > .panel:not(#important-info):not(#cost-calculator)')];
  if(mode==="day"){itinerary.style.display="grid";detailPanel.style.display="";side.style.display="";important.hidden=true;cost.hidden=true;otherPanels.forEach(p=>p.style.display="");renderDetail();renderBottomTabs();}
  else {itinerary.style.display="grid";detailPanel.style.display="none";side.style.display="none";otherPanels.forEach(p=>p.style.display="none");important.hidden=mode!=="info";cost.hidden=mode!=="cost";const target=mode==="info"?important:cost;const back=target.querySelector('.page-back');if(!back){const b=document.createElement('button');b.className='page-back';b.type='button';b.textContent='← 返回五日行程';b.onclick=()=>showView('day');target.insertBefore(b,target.firstChild);} }
- renderTabs();if(mode==="day")renderDetail();window.scrollTo({top:document.querySelector('#itinerary-detail').offsetTop-12,behavior:'auto'});
+ renderTabs();if(mode==="day")renderDetail();const destination=mode==="day"?document.getElementById("detail"):mode==="info"?important:cost;destination.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderBottomTabs(){
  const el=document.getElementById("bottomTabs");
  if(!el)return;
- el.innerHTML=`<div class="bottom-label">已到頁面底部？直接切換其他日期</div><div class="bottom-buttons"><button data-step="-1" ${selected===0?'disabled':''}>← 前一天</button>${data.map((d,i)=>`<button class="${i===selected?'active':''}" data-day="${i}">DAY ${i+1}</button>`).join("")}<button data-step="1" ${selected===data.length-1?'disabled':''}>下一天 →</button></div>`;
- el.querySelectorAll("button").forEach(b=>b.onclick=()=>{if(b.dataset.day!==undefined)selected=+b.dataset.day;else selected=Math.max(0,Math.min(data.length-1,selected+(+b.dataset.step)));render();document.getElementById("detail").scrollIntoView({behavior:"smooth",block:"start"})});
+ el.innerHTML=`<div class="bottom-label">已到頁面底部？直接切換其他頁面</div><div class="bottom-buttons"><button data-step="-1" ${selected===0?'disabled':''}>← 前一天</button>${data.map((d,i)=>`<button class="${viewMode==="day"&&i===selected?'active':''}" data-day="${i}">DAY ${i+1}</button>`).join("")}<button data-step="1" ${selected===data.length-1?'disabled':''}>下一天 →</button><button class="${viewMode==="info"?'active':''}" data-view="info">重要資訊</button><button class="${viewMode==="cost"?'active':''}" data-view="cost">費用計算</button></div>`;
+ el.querySelectorAll("button").forEach(b=>b.onclick=()=>{if(b.dataset.view){showView(b.dataset.view);return;}if(b.dataset.day!==undefined){selected=+b.dataset.day;showView("day");return;}selected=Math.max(0,Math.min(data.length-1,selected+(+b.dataset.step)));showView("day");});
 }
 function render(){renderTabs();renderDetail();renderBottomTabs()}
 render();

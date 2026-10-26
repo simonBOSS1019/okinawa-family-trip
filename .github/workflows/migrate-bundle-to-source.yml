@@ -1,0 +1,52 @@
+name: Prepare source-layout migration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: source-layout-migration
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out migration branch
+        uses: actions/checkout@v4
+        with:
+          ref: migration/source-layout
+          persist-credentials: true
+
+      - name: Extract current website bundle
+        run: |
+          set -euo pipefail
+          test -f site-bundle.zip
+          mkdir -p _migration_extract
+          unzip -q site-bundle.zip -d _migration_extract
+          test -f _migration_extract/index.html
+          test -f _migration_extract/trip-data.json
+          test -d _migration_extract/assets
+          mkdir -p assets data
+          cp _migration_extract/index.html ./index.html
+          cp _migration_extract/control-panel.html ./control-panel.html
+          cp _migration_extract/trip-data.json ./trip-data.json
+          cp -a _migration_extract/assets/. ./assets/
+          cp _migration_extract/README.md ./SITE-README.md
+          rm -rf _migration_extract
+          printf '\nExtracted source files from site-bundle.zip on %s.\n' "$(date -u +%FT%TZ)" > SOURCE_MIGRATION_NOTE.txt
+
+      - name: Commit extracted website files on migration branch
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html control-panel.html trip-data.json assets SITE-README.md SOURCE_MIGRATION_NOTE.txt
+          if git diff --cached --quiet; then
+            echo "No extracted-file changes to commit."
+            exit 0
+          fi
+          git commit -m "Extract website source files for migration"
+          git push origin HEAD:migration/source-layout

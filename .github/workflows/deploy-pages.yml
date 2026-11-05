@@ -1,5 +1,8 @@
 name: Deploy Okinawa Trip Website
 
+# A fresh commit SHA gives GitHub Pages a new deployment build ID.
+# Re-running the same SHA reused the stuck deployment ID, so publish from a new workflow revision.
+
 on:
   push:
     branches:

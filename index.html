@@ -42,10 +42,20 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 
 @media(max-width:560px){.hotel-expense{padding:11px}.hotel-expense-list{padding:4px 8px}.hotel-expense-item{grid-template-columns:minmax(0,1fr) 112px;gap:9px;padding:11px 2px}.hotel-expense-price{grid-column:2;border-left:0;border-top:1px dashed #dfd5c2;margin-top:7px;padding:7px 0 0;text-align:left;font-size:1.18rem}.hotel-expense-total{display:block;font-size:1rem}.hotel-expense-total strong{display:block;margin-top:3px;font-size:1.35rem}}
 @media(max-width:360px){.hotel-expense-item{grid-template-columns:minmax(0,1fr) 96px;gap:8px}.hotel-expense-name{font-size:.94rem}.hotel-expense-date,.hotel-expense-night{font-size:.75rem}}
+
+/* Homepage quick navigation directly below the cover */
+.hero-art{max-height:none;object-fit:contain;object-position:center}
+.quick-days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:14px 0 0}
+.quick-days .daytab-wrap{min-height:76px;padding:4px;border-radius:12px;box-shadow:0 2px 0 #eee4d2}
+.quick-days .daytab-wrap .daytab{min-height:68px;padding:4px 3px;gap:4px}
+.quick-days .daytab-wrap .daytab strong{font-size:.9rem;line-height:1.15}
+.quick-days .daytab-wrap .daytab small{font-size:.68rem;line-height:1.25}
+.quick-days .daytab-wrap .daytab .day-title{font-size:.7rem;white-space:normal;word-break:keep-all}
+@media(max-width:760px){.quick-days{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:12px}.quick-days .daytab-wrap{min-height:70px;padding:3px}.quick-days .daytab-wrap .daytab{min-height:64px;padding:4px 2px}.quick-days .daytab-wrap .daytab small{font-size:.63rem}.quick-days .daytab-wrap .daytab .day-title{font-size:.63rem;line-height:1.2}}
+@media(max-width:360px){.quick-days .daytab-wrap .daytab .day-title{font-size:.57rem}}
 </style></head><body>
-<header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日手繪旅行地圖封面"><div class="eyebrow" style="margin-top:18px">FAMILY ROAD TRIP · OKINAWA</div><h1>沖繩藍海<br>慢活五日</h1><p class="lead">把海風、島嶼日常與家人的步調，收進一趟五天四夜的自駕旅行。</p><div class="chips"><span class="chip">2026.11.15（日）— 11.19（四）</span><span class="chip">4 位大人・1 位小孩</span><span class="chip">Toyota Voxy 自駕</span></div></div></header>
-<main class="shell">
-<div class="head" id="itinerary-detail"><div><h2>五日行程</h2><p>查看精華、詳細安排與導航</p></div><p>未確認的時間已標記</p></div><nav class="days" id="tabs"></nav>
+<header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.webp" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
+<main class="shell" id="itinerary-detail">
 <div class="grid"><section class="panel"><div id="detail"></div><div class="bottom-day-nav" id="bottomTabs" aria-label="底部每日行程切換"></div></section><aside class="panel"><h2 style="margin-top:0">旅程資訊</h2>
 <div class="info"><strong>去程航班</strong>IT796｜預計 17:30 抵達那霸</div><div class="info"><strong>回程航班</strong>IT797｜11/19 13:30 起飛</div><div class="info"><strong>租車</strong>Relaxレンタカー 若狹店<br>Toyota Voxy｜11/16 取車、11/19 10:00 前還車</div>
 <div class="info"><strong>住宿 1｜11/15</strong>APA Hotel Naha Kuko Wakasa<br><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=APA+Hotel+Naha+Kuko+Wakasa">Google Maps ↗</a></div>

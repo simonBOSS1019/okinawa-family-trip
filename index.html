@@ -53,27 +53,35 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 .quick-days .daytab-wrap .daytab .day-title{font-size:.7rem;white-space:normal;word-break:keep-all}
 @media(max-width:760px){.quick-days{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:12px}.quick-days .daytab-wrap{min-height:70px;padding:3px}.quick-days .daytab-wrap .daytab{min-height:64px;padding:4px 2px}.quick-days .daytab-wrap .daytab small{font-size:.63rem}.quick-days .daytab-wrap .daytab .day-title{font-size:.63rem;line-height:1.2}}
 @media(max-width:360px){.quick-days .daytab-wrap .daytab .day-title{font-size:.57rem}}
-.floating-top[hidden]{display:none!important}\n</style></head><body>
+.floating-top[hidden]{display:none!important}\n
+.important-heading{justify-content:center;text-align:center;margin:0 0 22px;padding:18px 12px 20px;border-bottom:1px solid #e8dfcf;position:relative}
+.important-heading>div{width:100%;display:flex;flex-direction:column;align-items:center;gap:5px}
+.important-heading .important-kicker{display:inline-block;padding:4px 12px;border-radius:999px;background:#edf3eb;color:#829487;font-size:.68rem;font-weight:800;letter-spacing:.16em}
+.important-heading h2{margin:4px 0 0;font-size:1.8rem;letter-spacing:.08em;color:#40594f}
+.important-heading p{margin:3px 0 0;color:#8b9489;font-size:.92rem;letter-spacing:.06em}
+.flight-route{display:block;white-space:nowrap;font-size:clamp(.68rem,2.8vw,.86rem);letter-spacing:-.035em;line-height:1.5}
+@media(max-width:360px){.flight-route{font-size:.64rem;letter-spacing:-.055em}}
+</style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
 <div class="grid"><section class="panel"><div id="detail"></div><div class="bottom-day-nav" id="bottomTabs" aria-label="底部每日行程切換"></div></section></div>
-<section class="panel" style="margin-bottom:28px"><div class="head"><div><h2>出發前待確認</h2><p>已知資訊與未確認項目分開管理</p></div></div><div class="two"><div><b>已知／已列入</b><ul><li>日期、人數與租車車型</li><li>三段住宿安排</li><li>Day 2 南部景點後北上名護</li><li>Day 3 水族館、親子創作、超市採買</li><li>Day 5 還車目標與回程航班</li></ul></div><div><b>仍需核對</b><ul><li>各景點實際停留時間及道路車程</li><li>福州園 Garden Cafe 營業時間</li><li>奧武島玻璃船班次與海況</li><li>琉之國本店／TOPU 最終晚餐選擇</li><li>Maimai Shisa 預約時段、INOH 餐廳資訊</li><li>還車後接駁及機場報到截止時間</li></ul></div></div></section><section class="panel extra-panel" id="important-info" hidden><div class="head"><div><h2>重要資訊</h2><p>出發前確認、交通分流與現場注意事項</p></div></div>
+<section class="panel" style="margin-bottom:28px"><div class="head"><div><h2>出發前待確認</h2><p>已知資訊與未確認項目分開管理</p></div></div><div class="two"><div><b>已知／已列入</b><ul><li>日期、人數與租車車型</li><li>三段住宿安排</li><li>Day 2 南部景點後北上名護</li><li>Day 3 水族館、親子創作、超市採買</li><li>Day 5 還車目標與回程航班</li></ul></div><div><b>仍需核對</b><ul><li>各景點實際停留時間及道路車程</li><li>福州園 Garden Cafe 營業時間</li><li>奧武島玻璃船班次與海況</li><li>琉之國本店／TOPU 最終晚餐選擇</li><li>Maimai Shisa 預約時段、INOH 餐廳資訊</li><li>還車後接駁及機場報到截止時間</li></ul></div></div></section><section class="panel extra-panel" id="important-info" hidden><div class="head important-heading"><div><span class="important-kicker">TRAVEL NOTES</span><h2>重要資訊</h2><p>航班・交通・住宿・待確認</p></div></div>
 <section class="lodging-section flight-section" aria-label="航班與行李資訊">
 <div class="lodging-grid">
-<article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">02｜GRANDPARENTS GROUP B</div><h3>爺爺奶奶航班</h3></div><span class="lodging-date">長輩組</span></div>
+<article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">01｜GRANDPARENTS GROUP B</div><h3>爺爺奶奶航班</h3></div><span class="lodging-date">長輩組</span></div>
 <div class="lodging-order">訂位資訊｜<strong>LINE 記事本內有</strong></div>
 <div class="lodging-facts">
-<div class="lodging-fact wide"><b>去程｜2026/11/15（日）</b><span>台灣虎航 IT796<br>15:20 台南（TNN）→ 17:50 沖繩那霸（OKA）</span></div>
+<div class="lodging-fact wide"><b>去程｜2026/11/15（日）</b><span>台灣虎航 IT796<br><span class="flight-route">15:20 台南（TNN）→ 17:50 沖繩（OKA）</span></span></div>
 <div class="lodging-fact"><b>去程託運行李</b><span>1 件／25 公斤</span></div>
-<div class="lodging-fact wide"><b>回程｜2026/11/19（四）</b><span>台灣虎航 IT797<br>13:30 沖繩那霸（OKA）→ 14:20 台南（TNN）</span></div>
+<div class="lodging-fact wide"><b>回程｜2026/11/19（四）</b><span>台灣虎航 IT797<br><span class="flight-route">13:30 沖繩（OKA）→ 14:20 台南（TNN）</span></span></div>
 <div class="lodging-fact"><b>回程託運行李</b><span>1 件／25 公斤</span></div>
 </div></article>
-<article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">01｜主要訂位 GROUP A</div><h3>家庭組航班</h3></div><span class="lodging-date">4 位成人＋1 位兒童</span></div>
+<article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">02｜FAMILY GROUP A</div><h3>家庭組航班</h3></div><span class="lodging-date">4 位成人＋1 位兒童</span></div>
 <div class="lodging-order">訂位資訊｜<strong>LINE 記事本內有</strong></div>
 <div class="lodging-facts">
-<div class="lodging-fact wide"><b>去程｜2026/11/15（日）</b><span>台灣虎航 IT796<br>15:20 台南（TNN）→ 17:50 沖繩那霸（OKA）</span></div>
+<div class="lodging-fact wide"><b>去程｜2026/11/15（日）</b><span>台灣虎航 IT796<br><span class="flight-route">15:20 台南（TNN）→ 17:50 沖繩（OKA）</span></span></div>
 <div class="lodging-fact"><b>去程託運行李</b><span>1 件／25 公斤</span></div>
-<div class="lodging-fact wide"><b>回程｜2026/11/19（四）</b><span>台灣虎航 IT797<br>13:30 沖繩那霸（OKA）→ 14:20 台南（TNN）</span></div>
+<div class="lodging-fact wide"><b>回程｜2026/11/19（四）</b><span>台灣虎航 IT797<br><span class="flight-route">13:30 沖繩（OKA）→ 14:20 台南（TNN）</span></span></div>
 <div class="lodging-fact"><b>回程託運行李</b><span>2 件／25 公斤</span></div>
 </div></article>
 </div>

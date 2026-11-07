@@ -53,7 +53,7 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 .quick-days .daytab-wrap .daytab .day-title{font-size:.7rem;white-space:normal;word-break:keep-all}
 @media(max-width:760px){.quick-days{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:12px}.quick-days .daytab-wrap{min-height:70px;padding:3px}.quick-days .daytab-wrap .daytab{min-height:64px;padding:4px 2px}.quick-days .daytab-wrap .daytab small{font-size:.63rem}.quick-days .daytab-wrap .daytab .day-title{font-size:.63rem;line-height:1.2}}
 @media(max-width:360px){.quick-days .daytab-wrap .daytab .day-title{font-size:.57rem}}
-</style></head><body>
+.floating-top[hidden]{display:none!important}\n</style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
 <div class="grid"><section class="panel"><div id="detail"></div><div class="bottom-day-nav" id="bottomTabs" aria-label="底部每日行程切換"></div></section><aside class="panel"><h2 style="margin-top:0">旅程資訊</h2>
@@ -184,4 +184,21 @@ function renderBottomTabs(){
 function copyOrder(value){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(value).then(()=>{const b=[...document.querySelectorAll('.copy-order')].find(x=>x.getAttribute('onclick')===`copyOrder('${value}')`);if(b){const t=b.textContent;b.textContent='已複製';setTimeout(()=>b.textContent=t,1400)}}).catch(()=>window.prompt('請複製訂單編號',value));}else{window.prompt('請複製訂單編號',value)}}
 function render(){renderTabs();renderDetail();renderBottomTabs()}
 render();
-</script><a class="floating-top" href="#tabs" aria-label="返回首頁每日行程按鈕">↩️ <span>返回首頁</span></a></body></html>
+</script><a class="floating-top" href="#top" aria-label="返回首頁封面與每日行程按鈕" hidden>↩️ <span>返回首頁</span></a>
+<script>
+(()=> {
+  const back = document.querySelector('.floating-top');
+  const home = document.getElementById('top');
+  if (!back || !home) return;
+  const updateVisibility = () => {
+    back.hidden = window.scrollY + 8 < home.offsetHeight;
+  };
+  window.addEventListener('scroll', updateVisibility, { passive: true });
+  window.addEventListener('resize', updateVisibility);
+  back.addEventListener('click', event => {
+    event.preventDefault();
+    home.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  updateVisibility();
+})();
+</script></body></html>

@@ -66,6 +66,11 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 .day-stay .muted{display:inline-block;margin-bottom:4px;color:#879187;font-size:.84rem}
 .day-stay>b{display:inline-block;margin:3px 0 7px;color:#4b6258;font-size:1.05rem}
 .day-stay .maplink{display:inline-flex;margin:3px 0 0;padding:6px 12px;border:1px solid #d6e5e5;border-radius:999px;background:#edf4f5;color:#477c83;text-decoration:none}
+
+/* Keep bilingual section dividers on one line on narrow mobile screens */
+.section-heading{display:flex;align-items:baseline;gap:3px;white-space:nowrap;max-width:100%;font-size:clamp(1.08rem,4.5vw,1.3rem);letter-spacing:-.025em;line-height:1.25}
+.section-heading-en{font-size:clamp(.62rem,2.8vw,.82rem);letter-spacing:-.035em;font-weight:700;white-space:nowrap}
+@media(max-width:360px){.section-heading{font-size:1.02rem}.section-heading-en{font-size:.58rem;letter-spacing:-.045em}}
 </style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
@@ -81,7 +86,7 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 <div class="lodging-fact wide"><b>回程｜2026/11/19（四）</b><span>台灣虎航 IT797<br><span class="flight-route">13:30 沖繩（OKA）→ 14:20 台南（TNN）</span></span></div>
 <div class="lodging-fact"><b>回程託運行李</b><span>1 件／25 公斤</span></div>
 </div></article>
-<article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">02｜FAMILY GROUP A</div><h3>家庭組航班</h3></div><span class="lodging-date">4 位成人＋1 位兒童</span></div>
+<article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">02｜FAMILY GROUP A</div><h3>家庭組航班</h3></div><span class="lodging-date">2 位成人＋1 位兒童</span></div>
 <div class="lodging-order">訂位資訊｜<strong>LINE 記事本內有</strong></div>
 <div class="lodging-facts">
 <div class="lodging-fact wide"><b>去程｜2026/11/15（日）</b><span>台灣虎航 IT796<br><span class="flight-route">15:20 台南（TNN）→ 17:50 沖繩（OKA）</span></span></div>
@@ -92,7 +97,7 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 </div>
 <div class="lodging-alert">行李提醒｜兩組訂位的託運額度不同，出發前請分別確認行李件數、總重量及航空公司最新規定；登機箱與隨身行李規格另依台灣虎航規定辦理。</div>
 </section>
-<div class="lodging-section"><div class="head" style="margin:8px 0 10px"><div><h2 style="font-size:1.3rem">住宿資訊｜ACCOMMODATION GUIDE</h2><p>三段住宿・四晚旅程・入住資訊快速查閱</p></div></div><p class="lodging-intro">依入住日期排列；入住方式、停車規定及重要提醒請於抵達前確認。</p>
+<div class="lodging-section"><div class="head" style="margin:8px 0 10px"><div><h2 class="section-heading">住宿資訊<span class="section-heading-en">｜ STAY GUIDE</span></h2><p>三段住宿・四晚旅程・入住資訊快速查閱</p></div></div><p class="lodging-intro">依入住日期排列；入住方式、停車規定及重要提醒請於抵達前確認。</p>
 <div class="lodging-grid">
 <article class="lodging-card" id="lodging-apa"><div class="lodging-top"><div><div class="lodging-number">01｜NAHA · FIRST NIGHT</div><h3>APA Hotel Naha Kuko Wakasa</h3></div><span class="lodging-date">11/15（日）– 11/16（一）</span></div><div class="lodging-order">訂單編號｜<strong>MCB095537</strong> <button class="copy-order" type="button" onclick="copyOrder('MCB095537')">複製訂單編號</button></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px"><a class="maplink" style="margin:0" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=APA+Hotel+Naha+Kuko+Wakasa">👉住宿位置</a><a class="maplink" style="margin:0" target="_blank" rel="noopener" href="https://goo.gl/maps/sxstoPVJg6FvMSq89?g_st=ac">👉特色點我</a></div><div class="lodging-facts">
 <div class="lodging-fact"><b>入住／退房</b><span>15:00 後入住<br>10:00 前退房</span></div>

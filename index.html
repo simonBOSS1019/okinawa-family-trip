@@ -170,6 +170,89 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
   .departure-time strong{animation:none;opacity:1;text-shadow:none}
 }
 
+
+/* Refined cards: fixed time digits, breathing frame, three calm color roles */
+/* Departure card: pale sage green */
+.departure-card{
+  background:linear-gradient(145deg,#f0f5ec 0%,#e8f0e6 100%);
+  border-color:#d1dfd0;
+  box-shadow:0 3px 0 #e1e9de;
+}
+.departure-date{color:#788b7b}
+.departure-date span:last-child{
+  background:#e1ecdf;
+  border-color:#d0dfce;
+  color:#607c65;
+}
+.departure-time{
+  background:linear-gradient(160deg,#e1ecdf 0%,#d9e7d9 100%);
+  border-color:#bfd2c0;
+  animation:departure-frame-breathe 2.8s ease-in-out infinite;
+}
+.departure-time strong{
+  color:#527c63;
+  opacity:1;
+  text-shadow:none;
+  animation:none;
+}
+.departure-time span{color:#66836d}
+.departure-info h2{color:#40594f}
+.departure-main{color:#596f5d}
+.departure-note,.departure-group span{color:#758575}
+.departure-group{border-top-color:#d2ded0}
+.departure-group strong{color:#607761}
+
+/* Accommodation cards: grey-olive green, distinct from the departure card */
+.day-stay{
+  background:linear-gradient(135deg,#eef0e4 0%,#e7ebdc 100%);
+  border:1px solid #d5dbc9;
+}
+.day-stay .muted{color:#858c76}
+.day-stay>b{color:#59634f}
+.day-stay .maplink{
+  background:#e4e9db;
+  border-color:#d2dac8;
+  color:#667452;
+}
+.lodging-card{
+  background:linear-gradient(135deg,#f1f2e9 0%,#e7eadf 100%);
+  border-color:#d7ddcd;
+  box-shadow:0 4px 0 #e2e6da;
+}
+.lodging-card:before{background:#aebc9c}
+.lodging-card:nth-child(2):before{background:#c1c9a8}
+.lodging-card:nth-child(3):before{background:#c6bca0}
+.lodging-date{
+  background:#e5eadc;
+  border-color:#d1dac7;
+  color:#687653;
+}
+
+/* Today's highlights: warm rice-yellow */
+.summary{
+  background:#f7f0df;
+  border:1px solid #e8dcc1;
+  color:#665f4c;
+}
+.summary>b{color:#756747}
+
+/* Breathe only around the time frame. Keep digits and card background stable. */
+.departure-time{
+  box-shadow:0 0 5px 1px rgba(105,143,112,.13);
+}
+@keyframes departure-frame-breathe{
+  0%,100%{
+    box-shadow:0 0 5px 1px rgba(105,143,112,.13);
+  }
+  50%{
+    box-shadow:0 0 8px 2px rgba(105,143,112,.28);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .departure-time{animation:none;box-shadow:none}
+  .departure-time strong{animation:none;opacity:1;text-shadow:none}
+}
+
 </style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">

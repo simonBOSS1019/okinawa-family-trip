@@ -326,6 +326,47 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
  .hotel-expense-total strong{font-size:1.25rem}
 }
 
+
+/* Accommodation expenses: one unified card, matching the ticket / rental / SIM expense panels */
+.hotel-expense.cost-summary{
+  margin:0 0 22px;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#f4efe0;
+  box-shadow:0 3px 0 #eee5d6;
+}
+.hotel-expense.cost-summary>h3{
+  margin:0 0 12px;
+  padding:0 0 11px;
+  border-bottom:1px solid #e3d8c5;
+  color:#596b60;
+  font-size:1.08rem;
+}
+.hotel-expense .hotel-expense-cards{display:flex;flex-direction:column;gap:0}
+.hotel-expense .hotel-expense-card{
+  padding:13px 2px 12px;
+  border:0;
+  border-bottom:1px dashed #d9cfbb;
+  border-left:0;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+}
+.hotel-expense .hotel-expense-card:first-child{padding-top:4px}
+.hotel-expense .hotel-expense-card:last-child{border-bottom:0;padding-bottom:7px}
+.hotel-expense .hotel-expense-card:nth-child(2),
+.hotel-expense .hotel-expense-card:nth-child(3){border-left:0;background:transparent}
+.hotel-expense .hotel-expense-total{
+  margin-top:10px;
+  border:1px solid #e2d6bf;
+  background:#eee7d5;
+}
+@media(max-width:420px){
+  .hotel-expense.cost-summary{padding:14px 13px}
+  .hotel-expense .hotel-expense-card{padding:12px 1px}
+}
+
 </style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
@@ -377,7 +418,7 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 <div class="lodging-fact"><b>停車</b><span>¥1,500／天，車位有限。</span></div></div>
 <div class="lodging-alert">入住重要提醒｜2 位代表人請事先完成線上登錄；大門與房間密碼預計入住前一天寄送至信箱。停車位有限，費用 ¥1,500／天。</div>
 <div class="lodging-note">需脫鞋進房；全館禁煙，包含電子煙。</div></article>
-</div></div><div class="two"><div><h3>已知安排</h3><ul><li>行程日期：2026/11/15（日）至 11/19（四），4 大 1 小。</li><li>去程 IT796：11/15 預計 17:50 抵達那霸；回程 IT797：11/19 13:30 起飛。</li><li>租車訂單：PYS201402；供應商 Relax car rental（放鬆租車／Relaxレンタカー），車型 Toyota Voxy 或同級商務車，7 人座、標示可放 3 件行李、自排、空調。</li><li>租車時間：2026/11/16 09:00 取車，2026/11/19 09:00 還車，共 3 天；訂單基本費用及保險合計 NT$4,193。</li><li>取還車地點：Relax car rental 若狹店；地址：日本沖繩縣那霸市若狹 1-chōme-15-5（1-15-5 Wakasa, Naha, Okinawa）。<a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=1-15-5+Wakasa+Naha+Okinawa+Relax+Car+Rental">Google Maps 導航 ↗</a></li><li>兒童增高座椅已確認，估算 ¥500／天，三天約 ¥1,500；是否已包含在訂單 NT$4,193 內，需以付款明細核對。</li><li>租車公司已確認還車後可接駁至那霸機場，實際安排依現場指示。</li></ul></div><div><h3>待確認／重要提醒</h3><ul><li>住宿特殊需求：APA 相鄰房已申請；Glory Island 相鄰房及護照上傳人數仍待客服確認。各館入住方式與停車規則請先看上方住宿資訊卡。</li><li>還車前需加滿油並保留當日加油發票；發票格式仍待租車公司確認。</li><li>第二批 Uber 需核對乘客人數及行李量；目標 11:00 前抵達機場。</li><li>已選擇超級安心保險方案（三天估算 ¥8,580）；請向 Relax 租車確認保障範圍、除外責任，以及是否已包含於訂單 NT$4,193，避免重複計費。</li><li>奧武島玻璃船班次、海況，以及 Day 2 晚餐（二選一）仍需確認。</li><li>導航連結為規劃路線，車程會受當日路況、天候與停留時間影響。</li></ul></div></div><div class="stay"><b>Day 5 分流提醒</b><br><span class="muted">第一批負責加油、還車、攜帶主要及較重行李並搭接駁車；第二批由媽媽以手機叫 Uber，視小孩狀況可延至約 10:30 出發。兩批以 10:45–11:00 在那霸機場會合為目標。</span></div></section><section class="panel extra-panel" id="cost-calculator" hidden><div class="head"><div><h2>費用計算</h2><p>已知訂單費用與其他旅費估算分開記錄；金額以訂單及實際支出為準</p></div></div><section class="hotel-expense" aria-label="住宿費用明細">
+</div></div><div class="two"><div><h3>已知安排</h3><ul><li>行程日期：2026/11/15（日）至 11/19（四），4 大 1 小。</li><li>去程 IT796：11/15 預計 17:50 抵達那霸；回程 IT797：11/19 13:30 起飛。</li><li>租車訂單：PYS201402；供應商 Relax car rental（放鬆租車／Relaxレンタカー），車型 Toyota Voxy 或同級商務車，7 人座、標示可放 3 件行李、自排、空調。</li><li>租車時間：2026/11/16 09:00 取車，2026/11/19 09:00 還車，共 3 天；訂單基本費用及保險合計 NT$4,193。</li><li>取還車地點：Relax car rental 若狹店；地址：日本沖繩縣那霸市若狹 1-chōme-15-5（1-15-5 Wakasa, Naha, Okinawa）。<a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=1-15-5+Wakasa+Naha+Okinawa+Relax+Car+Rental">Google Maps 導航 ↗</a></li><li>兒童增高座椅已確認，估算 ¥500／天，三天約 ¥1,500；是否已包含在訂單 NT$4,193 內，需以付款明細核對。</li><li>租車公司已確認還車後可接駁至那霸機場，實際安排依現場指示。</li></ul></div><div><h3>待確認／重要提醒</h3><ul><li>住宿特殊需求：APA 相鄰房已申請；Glory Island 相鄰房及護照上傳人數仍待客服確認。各館入住方式與停車規則請先看上方住宿資訊卡。</li><li>還車前需加滿油並保留當日加油發票；發票格式仍待租車公司確認。</li><li>第二批 Uber 需核對乘客人數及行李量；目標 11:00 前抵達機場。</li><li>已選擇超級安心保險方案（三天估算 ¥8,580）；請向 Relax 租車確認保障範圍、除外責任，以及是否已包含於訂單 NT$4,193，避免重複計費。</li><li>奧武島玻璃船班次、海況，以及 Day 2 晚餐（二選一）仍需確認。</li><li>導航連結為規劃路線，車程會受當日路況、天候與停留時間影響。</li></ul></div></div><div class="stay"><b>Day 5 分流提醒</b><br><span class="muted">第一批負責加油、還車、攜帶主要及較重行李並搭接駁車；第二批由媽媽以手機叫 Uber，視小孩狀況可延至約 10:30 出發。兩批以 10:45–11:00 在那霸機場會合為目標。</span></div></section><section class="panel extra-panel" id="cost-calculator" hidden><div class="head"><div><h2>費用計算</h2><p>已知訂單費用與其他旅費估算分開記錄；金額以訂單及實際支出為準</p></div></div><section class="hotel-expense cost-summary" aria-label="住宿費用明細">
 <h3>🛏 住宿費用（共 3 筆／4 晚）</h3>
 <div class="hotel-expense-cards">
 <article class="hotel-expense-card">

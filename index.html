@@ -382,11 +382,32 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 .hotel-expense-summary-price{flex:none;align-self:center;color:#4c665b;font-size:1.02rem;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
 .hotel-expense-summary-card .hotel-expense-total{margin-top:13px}
 @media(max-width:420px){.hotel-expense-summary-card{padding:13px 12px}.hotel-expense-summary-head{align-items:flex-start}.hotel-expense-summary-head h3{font-size:1rem}.hotel-expense-count{font-size:.7rem;padding:4px 7px}.hotel-expense-summary-row{gap:8px}.hotel-expense-summary-title{flex-direction:column;gap:4px}.hotel-expense-summary-title strong{font-size:.88rem}.hotel-expense-summary-price{font-size:.92rem}.hotel-expense-summary-main p{font-size:.76rem}}
+
+/* Travel insurance card */
+.insurance-card{
+  background:linear-gradient(145deg,#f1f5f1 0%,#e8f0ed 100%);
+  border-color:#d2dfd8;
+  box-shadow:0 4px 0 #e0e9e3;
+}
+.insurance-card .lodging-number{color:#718b7e}
+.insurance-card .lodging-date{
+  background:#e4eee8;
+  border-color:#d0dfd6;
+  color:#5e7c6d;
+}
+.insurance-card .lodging-fact b{color:#62796d}
+.insurance-card .lodging-fact span{color:#53665d}
+.insurance-card .lodging-alert{
+  background:#f8f2e4;
+  border-color:#e7dcc3;
+  color:#82765d;
+}
+
 </style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
 <div class="grid"><section class="panel"><div id="detail"></div><div class="bottom-day-nav" id="bottomTabs" aria-label="底部每日行程切換"></div></section></div>
-<section class="panel" style="margin-bottom:28px"><div class="head"><div><h2>出發前待確認</h2><p>已知資訊與未確認項目分開管理</p></div></div><div class="two"><div><b>已知／已列入</b><ul><li>日期、人數與租車車型</li><li>三段住宿安排</li><li>Day 2 南部景點後北上名護</li><li>Day 3 水族館、親子創作、超市採買</li><li>Day 5 還車目標與回程航班</li></ul></div><div><b>仍需核對</b><ul><li>各景點實際停留時間及道路車程</li><li>福州園 Garden Cafe 營業時間</li><li>奧武島玻璃船班次與海況</li><li>琉之國本店／TOPU 最終晚餐選擇</li><li>Maimai Shisa 預約時段、INOH 餐廳資訊</li><li>還車後接駁及機場報到截止時間</li></ul></div></div></section><section class="panel extra-panel" id="important-info" hidden><div class="head important-heading"><div><span class="important-kicker">TRAVEL NOTES</span><h2>重要資訊</h2><p>航班・交通・住宿・待確認</p></div></div>
+<section class="panel" style="margin-bottom:28px"><div class="head"><div><h2>出發前待確認</h2><p>已知資訊與未確認項目分開管理</p></div></div><div class="two"><div><b>已知／已列入</b><ul><li>日期、人數與租車車型</li><li>三段住宿安排</li><li>Day 2 南部景點後北上名護</li><li>Day 3 水族館、親子創作、超市採買</li><li>Day 5 還車目標與回程航班</li></ul></div><div><b>仍需核對</b><ul><li>各景點實際停留時間及道路車程</li><li>福州園 Garden Cafe 營業時間</li><li>奧武島玻璃船班次與海況</li><li>琉之國本店／TOPU 最終晚餐選擇</li><li>Maimai Shisa 預約時段、INOH 餐廳資訊</li><li>還車後接駁及機場報到截止時間</li></ul></div></div></section><section class="panel extra-panel" id="important-info" hidden><div class="head important-heading"><div><span class="important-kicker">TRAVEL NOTES</span><h2>重要資訊</h2><p>航班・交通・住宿・保險・待確認</p></div></div>
 <section class="lodging-section flight-section" aria-label="航班與行李資訊">
 <div class="lodging-grid">
 <article class="lodging-card"><div class="lodging-top"><div><div class="lodging-number">01｜GRANDPARENTS GROUP B</div><h3>爺爺奶奶航班</h3></div><span class="lodging-date">長輩組</span></div>
@@ -433,7 +454,27 @@ a{color:#477c83;text-decoration:none}a:hover{text-decoration:underline}button{fo
 <div class="lodging-fact"><b>停車</b><span>¥1,500／天，車位有限。</span></div></div>
 <div class="lodging-alert">入住重要提醒｜2 位代表人請事先完成線上登錄；大門與房間密碼預計入住前一天寄送至信箱。停車位有限，費用 ¥1,500／天。</div>
 <div class="lodging-note">需脫鞋進房；全館禁煙，包含電子煙。</div></article>
-</div></div><div class="two"><div><h3>已知安排</h3><ul><li>行程日期：2026/11/15（日）至 11/19（四），4 大 1 小。</li><li>去程 IT796：11/15 預計 17:50 抵達那霸；回程 IT797：11/19 13:30 起飛。</li><li>租車訂單：PYS201402；供應商 Relax car rental（放鬆租車／Relaxレンタカー），車型 Toyota Voxy 或同級商務車，7 人座、標示可放 3 件行李、自排、空調。</li><li>租車時間：2026/11/16 09:00 取車，2026/11/19 09:00 還車，共 3 天；訂單基本費用及保險合計 NT$4,193。</li><li>取還車地點：Relax car rental 若狹店；地址：日本沖繩縣那霸市若狹 1-chōme-15-5（1-15-5 Wakasa, Naha, Okinawa）。<a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=1-15-5+Wakasa+Naha+Okinawa+Relax+Car+Rental">Google Maps 導航 ↗</a></li><li>兒童增高座椅已確認，估算 ¥500／天，三天約 ¥1,500；是否已包含在訂單 NT$4,193 內，需以付款明細核對。</li><li>租車公司已確認還車後可接駁至那霸機場，實際安排依現場指示。</li></ul></div><div><h3>待確認／重要提醒</h3><ul><li>住宿特殊需求：APA 相鄰房已申請；Glory Island 相鄰房及護照上傳人數仍待客服確認。各館入住方式與停車規則請先看上方住宿資訊卡。</li><li>還車前需加滿油並保留當日加油發票；發票格式仍待租車公司確認。</li><li>第二批 Uber 需核對乘客人數及行李量；目標 11:00 前抵達機場。</li><li>已選擇超級安心保險方案（三天估算 ¥8,580）；請向 Relax 租車確認保障範圍、除外責任，以及是否已包含於訂單 NT$4,193，避免重複計費。</li><li>奧武島玻璃船班次、海況，以及 Day 2 晚餐（二選一）仍需確認。</li><li>導航連結為規劃路線，車程會受當日路況、天候與停留時間影響。</li></ul></div></div><div class="stay"><b>Day 5 分流提醒</b><br><span class="muted">第一批負責加油、還車、攜帶主要及較重行李並搭接駁車；第二批由媽媽以手機叫 Uber，視小孩狀況可延至約 10:30 出發。兩批以 10:45–11:00 在那霸機場會合為目標。</span></div></section><section class="panel extra-panel" id="cost-calculator" hidden><div class="head"><div><h2>費用計算</h2><p>已知訂單費用與其他旅費估算分開記錄；金額以訂單及實際支出為準</p></div></div><section class="hotel-expense cost-summary" aria-label="住宿費用明細">
+</div></div>
+<section class="lodging-section insurance-section" aria-label="旅遊保險資訊">
+<div class="head" style="margin:8px 0 10px"><div><h2 class="section-heading">旅遊保險<span class="section-heading-en">｜ TRAVEL INSURANCE</span></h2><p>中信產險・日本五日遊保障摘要</p></div></div>
+<article class="lodging-card insurance-card">
+<div class="lodging-top"><div><div class="lodging-number">TRAVEL PROTECTION · 5 DAYS</div><h3>中信產險｜綠色高醫療乙型＋300萬＋加值型</h3></div><span class="lodging-date">旅遊保險</span></div>
+<div class="lodging-facts">
+<div class="lodging-fact"><b>意外身故／失能</b><span>NT$300 萬</span></div>
+<div class="lodging-fact"><b>意外醫療</b><span>NT$60 萬</span></div>
+<div class="lodging-fact"><b>海外突發疾病住院</b><span>NT$60 萬<br>含法定傳染病</span></div>
+<div class="lodging-fact"><b>門診／急診</b><span>住院額度 5%／10%</span></div>
+<div class="lodging-fact wide"><b>班機延誤</b><span>每滿 4 小時 NT$3,000，最高 NT$6,000</span></div>
+<div class="lodging-fact"><b>旅程取消</b><span>最高 NT$8 萬</span></div>
+<div class="lodging-fact"><b>旅程更改</b><span>最高 NT$8 萬</span></div>
+<div class="lodging-fact"><b>行李延誤／損失</b><span>各 NT$5,000</span></div>
+<div class="lodging-fact"><b>旅行文件損失</b><span>NT$3,000</span></div>
+<div class="lodging-fact wide"><b>海外急難救助</b><span>最高 US$60,000</span></div>
+</div>
+<div class="lodging-alert">保障摘要僅供快速查閱；實際承保範圍、理賠條件、除外責任及給付上限，均以正式保單條款為準。</div>
+</article>
+</section>
+<div class="two"><div><h3>待確認／重要提醒</h3><ul><li>住宿特殊需求：APA 相鄰房已申請；Glory Island 相鄰房及護照上傳人數仍待客服確認。各館入住方式與停車規則請先看上方住宿資訊卡。</li><li>還車前需加滿油並保留當日加油發票；發票格式仍待租車公司確認。</li><li>第二批 Uber 需核對乘客人數及行李量；目標 11:00 前抵達機場。</li><li>已選擇超級安心保險方案（三天估算 ¥8,580）；請向 Relax 租車確認保障範圍、除外責任，以及是否已包含於訂單 NT$4,193，避免重複計費。</li><li>奧武島玻璃船班次、海況，以及 Day 2 晚餐（二選一）仍需確認。</li><li>導航連結為規劃路線，車程會受當日路況、天候與停留時間影響。</li></ul></div></div><div class="stay"><b>Day 5 分流提醒</b><br><span class="muted">第一批負責加油、還車、攜帶主要及較重行李並搭接駁車；第二批由媽媽以手機叫 Uber，視小孩狀況可延至約 10:30 出發。兩批以 10:45–11:00 在那霸機場會合為目標。</span></div></section><section class="panel extra-panel" id="cost-calculator" hidden><div class="head"><div><h2>費用計算</h2><p>已知訂單費用與其他旅費估算分開記錄；金額以訂單及實際支出為準</p></div></div><section class="hotel-expense cost-summary" aria-label="住宿費用明細">
 <div class="hotel-expense-summary-card">
 <div class="hotel-expense-summary-head"><div><span class="hotel-expense-kicker">ACCOMMODATION · 4 NIGHTS</span><h3>🛏 住宿費用明細</h3></div><span class="hotel-expense-count">3 筆訂單・4 晚</span></div>
 <div class="hotel-expense-summary-row"><div class="hotel-expense-summary-main"><div class="hotel-expense-summary-title"><strong>🏨 APA Hotel Naha Kuko Wakasa</strong><span>1 晚</span></div><p>📅 11/15（日）– 11/16（一）</p><p>雙人房（禁菸）× 2 間｜每間 1 張特大雙人床</p></div><div class="hotel-expense-summary-price">NT$3,630</div></div>
@@ -486,7 +527,7 @@ let data=initial, selected=0;
 const tabs=document.getElementById("tabs"),detail=document.getElementById("detail");
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const maps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q+" Okinawa Japan");
-function renderTabs(){tabs.innerHTML=data.map((d,i)=>`<div class="daytab-wrap ${viewMode==="day"&&i===selected?'active':''}"><button class="daytab" data-i="${i}"><strong>DAY ${i+1}</strong><small>${esc(d.dateLabel)}</small><small class="day-title">${esc(d.title.split("｜")[0])}</small></button></div>`).join("")+`<div class="daytab-wrap utility ${viewMode==="info"?'active':''}"><button class="daytab" data-view="info"><strong>重要資訊</strong><small>航班・交通・住宿・待確認</small></button></div><div class="daytab-wrap utility ${viewMode==="cost"?'active':''}"><button class="daytab" data-view="cost"><strong>費用計算</strong><small>租車附加費・旅費預算</small></button></div>`;tabs.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{selected=+b.dataset.i;showView("day")});tabs.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>showView(b.dataset.view))}
+function renderTabs(){tabs.innerHTML=data.map((d,i)=>`<div class="daytab-wrap ${viewMode==="day"&&i===selected?'active':''}"><button class="daytab" data-i="${i}"><strong>DAY ${i+1}</strong><small>${esc(d.dateLabel)}</small><small class="day-title">${esc(d.title.split("｜")[0])}</small></button></div>`).join("")+`<div class="daytab-wrap utility ${viewMode==="info"?'active':''}"><button class="daytab" data-view="info"><strong>重要資訊</strong><small>航班・交通・住宿・保險・待確認</small></button></div><div class="daytab-wrap utility ${viewMode==="cost"?'active':''}"><button class="daytab" data-view="cost"><strong>費用計算</strong><small>租車附加費・旅費預算</small></button></div>`;tabs.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{selected=+b.dataset.i;showView("day")});tabs.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>showView(b.dataset.view))}
 const departurePlans = [
  {time:"13:20",timeLabel:"準時出發",main:"從家裡開車出發",memo:"開車前往台南機場。"},
  {time:"09:15",timeLabel:"準時出發",main:"飯店後方停車場集合",memo:"接送大家上車，09:15 準時出發。"},

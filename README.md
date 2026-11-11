@@ -2,22 +2,34 @@
 
 沖繩家族之旅｜2026/11/15–11/19 五天四夜自駕行程網站。
 
-## Publish the website (one-time setup)
+## Publish the website
 
-This repository now includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml`. The complete site bundle contains the HTML, itinerary data, CSS/JavaScript, and all illustrations.
+This repository uses the GitHub Actions workflow at `.github/workflows/deploy-pages.yml`.
 
-1. Download the complete ZIP supplied in the ChatGPT conversation.
-2. On GitHub, choose **Add file → Upload files** and upload the ZIP to the repository root, naming it exactly **`site-bundle.zip`**. Upload the ZIP as a single file; do not extract it on the phone.
-3. Commit the upload to the `main` branch.
-4. If Pages is not enabled yet, open [Settings → Pages](https://github.com/simonBOSS1019/okinawa-family-trip/settings/pages) and select **GitHub Actions** as the build/deployment source.
-5. Follow [Actions](https://github.com/simonBOSS1019/okinawa-family-trip/actions) and confirm **Deploy Okinawa Trip Website** succeeds. The final public URL will be shown in the deployment job.
+The workflow supports two source layouts:
 
-The workflow extracts `site-bundle.zip`, verifies that `index.html` and the `assets` folder are present, and publishes the contents using GitHub Pages.
+- **Repository-root files:** `index.html`, `control-panel.html`, `trip-data.json`, and the `assets/` folder.
+- **ZIP-only upload:** `site-bundle.zip` in the repository root. The workflow extracts the archive and publishes the website files from it.
 
-## Current status
+The workflow detects which source was changed by the current push. Changes to the repository-root website files or `assets/` take precedence; when the push updates only `site-bundle.zip`, the workflow deploys that newly uploaded archive even if older root files are already present. A manual run with no source changes uses complete root files first and falls back to the ZIP only when the root source is incomplete.
 
-- The deployment workflow has been added to this repository.
-- The website bundle has not yet been uploaded to this repository.
-- GitHub Pages has not been verified as deployed; do not treat the site as live until the Actions job succeeds.
+### First-time setup
+
+1. Open [Settings → Pages](https://github.com/simonBOSS1019/okinawa-family-trip/settings/pages).
+2. Set the build and deployment source to **GitHub Actions**.
+3. Open [Actions](https://github.com/simonBOSS1019/okinawa-family-trip/actions) and confirm that **Deploy Okinawa Trip Website** completes successfully. You can also start it manually with **Run workflow**.
+4. After a successful run, use the public URL shown in the deployment job.
+
+### Updating the website
+
+- Changes to the root HTML/data files, anything under `assets/`, the ZIP archive, or this workflow trigger a deployment when committed to `main`.
+- To publish from a ZIP on a phone, upload it to the repository root with the exact name `site-bundle.zip`, then commit it to `main`. When that commit changes only the ZIP, the workflow uses the new archive.
+- The ZIP must contain `index.html`, `control-panel.html`, `trip-data.json`, and `assets/cover.png` together in one website folder. That folder may be at the archive root or inside one enclosing directory.
+
+## Current deployment checklist
+
+- The repository-root website files are present.
+- The workflow supports both repository-root files and a ZIP-only upload.
+- The live deployment is confirmed only after the latest **Deploy Okinawa Trip Website** run succeeds.
 
 Repository: https://github.com/simonBOSS1019/okinawa-family-trip

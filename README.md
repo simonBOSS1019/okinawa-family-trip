@@ -8,7 +8,7 @@ This repository uses the GitHub Actions workflow at `.github/workflows/deploy-pa
 
 The workflow supports two source layouts:
 
-- **Repository-root files (preferred):** `index.html`, `control-panel.html`, `trip-data.json`, and the `assets/` folder.
+- **Repository-root files:** `index.html`, `control-panel.html`, `trip-data.json`, and the `assets/` folder.
 - **ZIP-only upload:** `site-bundle.zip` in the repository root. The workflow extracts the archive and publishes the website files from it.
 
 The workflow detects which source was changed by the current push. Changes to the repository-root website files or `assets/` take precedence; when the push updates only `site-bundle.zip`, the workflow deploys that newly uploaded archive even if older root files are already present. A manual run with no source changes uses complete root files first and falls back to the ZIP only when the root source is incomplete.

@@ -33,30 +33,49 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare and validate website source
+        env:
+          EVENT_COMMITS: ${{ toJSON(github.event.commits) }}
         run: |
           set -euo pipefail
 
-          # Prefer committed root files so a stale ZIP cannot overwrite newer edits.
-          if [[ -f index.html && -f control-panel.html && -f trip-data.json && -f assets/cover.png ]]; then
+          # Use the source changed by this push. This lets a ZIP-only upload replace
+          # the existing root files without allowing an old ZIP to override newer edits.
+          ZIP_CHANGED="$(jq -r 'any(.[]?; (((.added // []) + (.modified // []) + (.removed // [])) | index("site-bundle.zip")) != null)' <<< "$EVENT_COMMITS")"
+          ROOT_CHANGED="$(jq -r 'any(.[]?; any(((.added // []) + (.modified // []) + (.removed // []))[]; . == "index.html" or . == "control-panel.html" or . == "trip-data.json" or startswith("assets/")))' <<< "$EVENT_COMMITS")"
+
+          if [[ "$ROOT_CHANGED" == "true" ]]; then
             SOURCE_DIR="$GITHUB_WORKSPACE"
-            echo "Using website files from the repository root."
-          else
-            # Support the documented phone-friendly workflow: upload one ZIP to the repo root.
+            echo "Using website files changed in the repository root."
+          elif [[ "$ZIP_CHANGED" == "true" ]]; then
             test -f site-bundle.zip || {
-              echo "::error::Website source is incomplete and site-bundle.zip was not found."
+              echo "::error::The push changed site-bundle.zip, but the archive is missing."
               exit 1
             }
-
             mkdir -p _bundle
             unzip -q site-bundle.zip -d _bundle
-
             INDEX_PATH="$(find _bundle -type f -name index.html -print -quit)"
             test -n "$INDEX_PATH" || {
               echo "::error::site-bundle.zip does not contain index.html."
               exit 1
             }
             SOURCE_DIR="$(dirname "$INDEX_PATH")"
-            echo "Using website files extracted from site-bundle.zip."
+            echo "Using the newly uploaded site-bundle.zip."
+          elif [[ -f index.html && -f control-panel.html && -f trip-data.json && -f assets/cover.png ]]; then
+            SOURCE_DIR="$GITHUB_WORKSPACE"
+            echo "Using the complete website files from the repository root."
+          elif [[ -f site-bundle.zip ]]; then
+            mkdir -p _bundle
+            unzip -q site-bundle.zip -d _bundle
+            INDEX_PATH="$(find _bundle -type f -name index.html -print -quit)"
+            test -n "$INDEX_PATH" || {
+              echo "::error::site-bundle.zip does not contain index.html."
+              exit 1
+            }
+            SOURCE_DIR="$(dirname "$INDEX_PATH")"
+            echo "Using the available site-bundle.zip fallback."
+          else
+            echo "::error::No complete website source was found in the repository root or site-bundle.zip."
+            exit 1
           fi
 
           for required_file in index.html control-panel.html trip-data.json assets/cover.png; do

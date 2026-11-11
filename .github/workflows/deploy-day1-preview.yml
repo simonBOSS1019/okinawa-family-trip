@@ -1,0 +1,120 @@
+name: Deploy Day 1 Design Preview
+
+on:
+  push:
+    branches:
+      - redesign/day1-editorial-preview
+    paths:
+      - "index.html"
+      - "control-panel.html"
+      - "trip-data.json"
+      - "assets/**"
+      - ".github/workflows/deploy-day1-preview.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Share the Pages deployment lock with the production workflow.
+# A production deployment takes priority if both are triggered.
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy-preview:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}preview/day1/
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the current production site
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: production
+
+      - name: Check out the Day 1 redesign
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          path: redesign
+
+      - name: Build a combined production and preview site
+        run: |
+          set -euo pipefail
+
+          for required_file in index.html control-panel.html trip-data.json assets/cover.png; do
+            test -f "production/$required_file" || {
+              echo "::error::Production source is missing $required_file"
+              exit 1
+            }
+            test -f "redesign/$required_file" || {
+              echo "::error::Preview source is missing $required_file"
+              exit 1
+            }
+          done
+
+          mkdir -p _site/preview/day1
+
+          # Keep the public root exactly as it exists on main.
+          cp production/index.html production/control-panel.html production/trip-data.json _site/
+          cp -a production/assets _site/assets
+
+          # Publish the redesigned page and its relative dependencies in a separate path.
+          cp redesign/index.html redesign/control-panel.html redesign/trip-data.json _site/preview/day1/
+          cp -a redesign/assets _site/preview/day1/assets
+
+          # Add a clear label so visitors know this URL is a temporary design preview.
+          python3 - <<'PY'
+          from pathlib import Path
+
+          page = Path("_site/preview/day1/index.html")
+          html = page.read_text(encoding="utf-8")
+          marker = '<header class="hero" id="top">'
+          notice = (
+              '<aside role="note" aria-label="設計預覽版本" '
+              'style="padding:9px 14px;text-align:center;background:#385c52;'
+              'color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em">'
+              'DAY 1 REDESIGN PREVIEW｜此為設計預覽，不影響正式網站</aside>\\n'
+          )
+          if marker not in html:
+              raise SystemExit("Could not find the homepage header insertion point.")
+          page.write_text(html.replace(marker, notice + marker, 1), encoding="utf-8")
+          PY
+
+          for required_file in \
+            _site/index.html \
+            _site/control-panel.html \
+            _site/trip-data.json \
+            _site/assets/cover.png \
+            _site/preview/day1/index.html \
+            _site/preview/day1/trip-data.json \
+            _site/preview/day1/control-panel.html \
+            _site/preview/day1/assets/day1-01-airport.jpg \
+            _site/preview/day1/assets/day1-02-dinner.jpg \
+            _site/preview/day1/assets/day1-03-convenience-store.jpg \
+            _site/preview/day1/assets/day1-04-hotel-bath.jpg; do
+            test -f "$required_file" || {
+              echo "::error::Preview build is missing $required_file"
+              exit 1
+            }
+          done
+
+          echo "Production root and Day 1 preview files are ready."
+          du -sh _site
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload combined Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy production site with isolated Day 1 preview path
+        id: deployment
+        uses: actions/deploy-pages@v4

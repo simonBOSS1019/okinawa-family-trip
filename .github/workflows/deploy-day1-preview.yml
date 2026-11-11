@@ -3,24 +3,19 @@ name: Deploy Day 1 Design Preview
 on:
   push:
     branches:
-      - redesign/day1-editorial-preview
+      - main
     paths:
-      - "index.html"
-      - "control-panel.html"
-      - "trip-data.json"
-      - "assets/**"
       - ".github/workflows/deploy-day1-preview.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Share the Pages deployment lock with the production workflow.
-# A production deployment takes priority if both are triggered.
 concurrency:
   group: github-pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy-preview:
@@ -35,10 +30,10 @@ jobs:
           ref: main
           path: production
 
-      - name: Check out the Day 1 redesign
+      - name: Check out the Day 1 redesign source
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }}
+          ref: redesign/day1-editorial-preview
           path: redesign
 
       - name: Build a combined production and preview site
@@ -62,11 +57,11 @@ jobs:
           cp production/index.html production/control-panel.html production/trip-data.json _site/
           cp -a production/assets _site/assets
 
-          # Publish the redesigned page and its relative dependencies in a separate path.
+          # Publish the redesigned page and all relative dependencies in an isolated path.
           cp redesign/index.html redesign/control-panel.html redesign/trip-data.json _site/preview/day1/
           cp -a redesign/assets _site/preview/day1/assets
 
-          # Add a clear label so visitors know this URL is a temporary design preview.
+          # Make the preview status unmistakable.
           python3 - <<'PY'
           from pathlib import Path
 
@@ -77,7 +72,7 @@ jobs:
               '<aside role="note" aria-label="設計預覽版本" '
               'style="padding:9px 14px;text-align:center;background:#385c52;'
               'color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em">'
-              'DAY 1 REDESIGN PREVIEW｜此為設計預覽，不影響正式網站</aside>\n'
+              'DAY 1 REDESIGN PREVIEW｜此為設計預覽，不影響正式網站</aside>\\n'
           )
           if marker not in html:
               raise SystemExit("Could not find the homepage header insertion point.")
@@ -115,6 +110,6 @@ jobs:
         with:
           path: _site
 
-      - name: Deploy production site with isolated Day 1 preview path
+      - name: Deploy site with isolated Day 1 preview path
         id: deployment
         uses: actions/deploy-pages@v4

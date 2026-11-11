@@ -77,7 +77,7 @@ jobs:
               '<aside role="note" aria-label="設計預覽版本" '
               'style="padding:9px 14px;text-align:center;background:#385c52;'
               'color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em">'
-              'DAY 1 REDESIGN PREVIEW｜此為設計預覽，不影響正式網站</aside>\\n'
+              'DAY 1 REDESIGN PREVIEW｜此為設計預覽，不影響正式網站</aside>\n'
           )
           if marker not in html:
               raise SystemExit("Could not find the homepage header insertion point.")

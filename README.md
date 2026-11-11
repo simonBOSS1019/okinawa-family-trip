@@ -11,7 +11,7 @@ The workflow supports two source layouts:
 - **Repository-root files (preferred):** `index.html`, `control-panel.html`, `trip-data.json`, and the `assets/` folder.
 - **ZIP-only upload:** `site-bundle.zip` in the repository root. The workflow extracts the archive and publishes the website files from it.
 
-When both are available, the workflow uses the complete repository-root files first. This prevents an older ZIP archive from overwriting newer edits.
+The workflow detects which source was changed by the current push. Changes to the repository-root website files or `assets/` take precedence; when the push updates only `site-bundle.zip`, the workflow deploys that newly uploaded archive even if older root files are already present. A manual run with no source changes uses complete root files first and falls back to the ZIP only when the root source is incomplete.
 
 ### First-time setup
 
@@ -23,7 +23,7 @@ When both are available, the workflow uses the complete repository-root files fi
 ### Updating the website
 
 - Changes to the root HTML/data files, anything under `assets/`, the ZIP archive, or this workflow trigger a deployment when committed to `main`.
-- To publish from a ZIP on a phone, upload it to the repository root with the exact name `site-bundle.zip`, then commit it to `main`.
+- To publish from a ZIP on a phone, upload it to the repository root with the exact name `site-bundle.zip`, then commit it to `main`. When that commit changes only the ZIP, the workflow uses the new archive.
 - The ZIP must contain `index.html`, `control-panel.html`, `trip-data.json`, and `assets/cover.png` together in one website folder. That folder may be at the archive root or inside one enclosing directory.
 
 ## Current deployment checklist

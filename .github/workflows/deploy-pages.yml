@@ -1,8 +1,5 @@
 name: Deploy Okinawa Trip Website
 
-# A fresh commit SHA gives GitHub Pages a new deployment build ID.
-# Re-running the same SHA reused the stuck deployment ID, so publish from a new workflow revision.
-
 on:
   push:
     branches:
@@ -12,6 +9,7 @@ on:
       - "control-panel.html"
       - "trip-data.json"
       - "assets/**"
+      - "site-bundle.zip"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -34,16 +32,47 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Validate source website
+      - name: Prepare and validate website source
         run: |
           set -euo pipefail
-          test -f index.html
-          test -f control-panel.html
-          test -f trip-data.json
-          test -d assets
+
+          # Prefer committed root files so a stale ZIP cannot overwrite newer edits.
+          if [[ -f index.html && -f control-panel.html && -f trip-data.json && -f assets/cover.png ]]; then
+            SOURCE_DIR="$GITHUB_WORKSPACE"
+            echo "Using website files from the repository root."
+          else
+            # Support the documented phone-friendly workflow: upload one ZIP to the repo root.
+            test -f site-bundle.zip || {
+              echo "::error::Website source is incomplete and site-bundle.zip was not found."
+              exit 1
+            }
+
+            mkdir -p _bundle
+            unzip -q site-bundle.zip -d _bundle
+
+            INDEX_PATH="$(find _bundle -type f -name index.html -print -quit)"
+            test -n "$INDEX_PATH" || {
+              echo "::error::site-bundle.zip does not contain index.html."
+              exit 1
+            }
+            SOURCE_DIR="$(dirname "$INDEX_PATH")"
+            echo "Using website files extracted from site-bundle.zip."
+          fi
+
+          for required_file in index.html control-panel.html trip-data.json assets/cover.png; do
+            test -f "$SOURCE_DIR/$required_file" || {
+              echo "::error::Missing required website file: $required_file"
+              exit 1
+            }
+          done
+
           mkdir -p _site
-          cp index.html control-panel.html trip-data.json _site/
-          cp -a assets _site/assets
+          cp "$SOURCE_DIR/index.html" "$SOURCE_DIR/control-panel.html" "$SOURCE_DIR/trip-data.json" _site/
+          cp -a "$SOURCE_DIR/assets" _site/assets
+
+          test -f _site/index.html
+          test -f _site/control-panel.html
+          test -f _site/trip-data.json
           test -f _site/assets/cover.png
 
       - name: Configure GitHub Pages

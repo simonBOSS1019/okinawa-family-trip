@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8edda"/><stop offset="1" stop-color="#f1dfc0"/></linearGradient>
+ <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feGaussianBlur in="SourceAlpha" stdDeviation="5"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".16"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="1200" rx="34" fill="url(#bg)"/>
+<g fill="none" stroke="#dfcaa7" stroke-width="3" opacity=".5"><path d="M0 70Q35 25 70 70T140 70T210 70M990 70q35-45 70 0t70 0t70 0M0 1130q35-45 70 0t70 0t70 0M990 1130q35-45 70 0t70 0t70 0"/></g>
+<text x="600" y="120" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="78" font-weight="900" fill="#b62827" stroke="#fffaf0" stroke-width="15" paint-order="stroke">日本佛系退稅法！</text>
+<text x="600" y="196" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="43" font-weight="800" fill="#202020">簡單三步驟：</text>
+<rect x="420" y="153" width="690" height="65" rx="28" fill="#9c2825"/>
+<text x="765" y="198" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="38" font-weight="900" fill="#ffe36d">免註冊，免綁卡，輕鬆領現金！</text>
+<g filter="url(#shadow)">
+ <rect x="65" y="260" width="1070" height="210" rx="34" fill="#fffdf8" stroke="#d4b98d" stroke-width="7"/>
+ <rect x="65" y="495" width="1070" height="315" rx="34" fill="#fffdf8" stroke="#d4b98d" stroke-width="7"/>
+ <rect x="65" y="835" width="660" height="290" rx="34" fill="#fffdf8" stroke="#d4b98d" stroke-width="7"/>
+</g>
+<g font-family="Noto Sans TC,Arial,sans-serif" fill="#161616">
+ <text x="110" y="350" font-size="66" font-weight="900" fill="#b72a27">1.</text>
+ <text x="215" y="340" font-size="43" font-weight="800">在商店內出示護照辦退稅，</text>
+ <text x="215" y="402" font-size="43" font-weight="800">任何付款方式皆可，不用掃 QR code。</text>
+ <text x="110" y="590" font-size="66" font-weight="900" fill="#b72a27">2.</text>
+ <text x="215" y="575" font-size="42" font-weight="800">不用提早到機場，照原本時間即可。</text>
+ <text x="215" y="635" font-size="42" font-weight="800">到機場大廳找 TAX REFUND 牌子，</text>
+ <text x="215" y="695" font-size="42" font-weight="800">在機器掃護照，確認青紅燈指示。</text>
+ <text x="215" y="755" font-size="35" font-weight="800" fill="#167a48">綠燈：過關，可去航空公司託運行李。</text>
+ <text x="110" y="930" font-size="66" font-weight="900" fill="#b72a27">3.</text>
+ <text x="215" y="912" font-size="39" font-weight="800">過行李安檢到管制區後，</text>
+ <text x="215" y="968" font-size="39" font-weight="800">再找一次 TAX REFUND 牌子，</text>
+ <text x="215" y="1024" font-size="39" font-weight="800">掃護照，到退稅金機台領現金。</text>
+ <text x="215" y="1080" font-size="32" font-weight="800" fill="#8a2b27">可以去逛土產店，把現金花掉！</text>
+</g>
+<g transform="translate(820 850)">
+ <rect x="0" y="0" width="310" height="240" rx="22" fill="#24644f" stroke="#74553c" stroke-width="12"/>
+ <text x="155" y="60" text-anchor="middle" font-family="Noto Sans TC,Arial" font-size="40" font-weight="900" fill="#fff">日本</text>
+ <text x="155" y="110" text-anchor="middle" font-family="Noto Sans TC,Arial" font-size="40" font-weight="900" fill="#fff">退稅</text>
+ <circle cx="155" cy="175" r="67" fill="#344f70" stroke="#26384f" stroke-width="8"/>
+ <circle cx="130" cy="163" r="19" fill="#fff"/><circle cx="180" cy="163" r="19" fill="#fff"/>
+ <circle cx="133" cy="165" r="9" fill="#222"/><circle cx="183" cy="165" r="9" fill="#222"/>
+ <path d="M130 205q25 27 50 0" fill="none" stroke="#f4ce56" stroke-width="13" stroke-linecap="round"/>
+ <path d="M90 122q65-45 130 0" fill="none" stroke="#b42d2d" stroke-width="16" stroke-linecap="round"/>
+</g>
+<text x="600" y="1170" text-anchor="middle" font-family="Noto Sans TC,Arial,sans-serif" font-size="25" font-weight="700" fill="#775d3e">退稅流程資訊整理｜實際規定及機場指示請以官方公告為準</text>
+</svg>

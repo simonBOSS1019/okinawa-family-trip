@@ -450,6 +450,41 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}butto
 .discount-feature-card figcaption strong{font-size:1rem}
 .discount-feature-card figcaption span{font-size:.8rem;color:#8a806b}
 @media(max-width:480px){.discount-feature-card{padding:7px}.discount-feature-card figcaption{align-items:flex-start;flex-direction:column;gap:3px}}
+
+/* Okinawa payment guide card — warm paper and muted travel-journal palette */
+.japan-card-guide{max-width:760px;margin:0 auto 20px;padding:16px;border:1px solid #e5dac7;border-radius:18px;background:linear-gradient(150deg,#fffaf0 0%,#f7f1e4 100%);box-shadow:0 4px 0 var(--shadow-soft);color:#59685b}
+.japan-card-head{padding:2px 2px 13px;border-bottom:1px solid #e6ddca}
+.japan-card-kicker{color:#9b8a68;font-size:.68rem;font-weight:850;letter-spacing:.13em}
+.japan-card-head h3{margin:5px 0 4px;color:#506b5a;font-family:"Noto Serif TC",serif;font-size:1.22rem;line-height:1.4}
+.japan-card-head p{margin:0;color:#8a806d;font-size:.82rem;line-height:1.55}
+.japan-pay-group{margin-top:12px;padding:12px;border:1px solid #e5dfcf;border-radius:13px;background:rgba(255,255,255,.56)}
+.japan-pay-top{background:#f1f5e9;border-color:#dce5d3}
+.japan-pay-title{display:flex;align-items:center;gap:8px;margin:0 0 8px}
+.japan-pay-title>span{font-size:.85rem;letter-spacing:.04em}
+.japan-pay-title h4{margin:0;color:#5d735e;font-size:.95rem;font-weight:850}
+.japan-pay-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed #e7e0d2}
+.japan-pay-row:last-of-type{border-bottom:0}
+.japan-pay-row>div{display:flex;align-items:center;gap:9px;min-width:0}
+.japan-pay-row strong{min-width:54px;color:#b07846;font-size:1.12rem;font-weight:900;font-variant-numeric:tabular-nums}
+.japan-pay-row span{color:#56685a;font-size:.86rem;font-weight:750;line-height:1.45}
+.japan-pay-row small{flex:none;color:#91856f;font-size:.73rem;text-align:right}
+.japan-pay-link{display:inline-flex;align-items:center;max-width:100%;margin:7px 0 1px;padding:7px 10px;border:1px solid #d7e2d7;border-radius:999px;background:#edf3eb;color:#5e7c69;font-size:.78rem;font-weight:750;line-height:1.4;text-decoration:none}
+.japan-pay-link:hover{background:#e5eee3;text-decoration:none}
+.japan-pay-note{margin:0 0 6px;color:#8b816d;font-size:.77rem;line-height:1.55}
+.japan-pay-special{background:#f8f0e1;border-color:#e9dcc2}
+.japan-pay-special .japan-pay-title h4{color:#8a704d}
+.japan-pay-footnote{margin:12px 2px 0;color:#938a79;font-size:.72rem;line-height:1.6}
+@media(max-width:480px){
+ .japan-card-guide{padding:11px;border-radius:15px}
+ .japan-pay-group{padding:10px}
+ .japan-pay-row{align-items:flex-start;gap:7px}
+ .japan-pay-row>div{gap:6px}
+ .japan-pay-row strong{min-width:48px;font-size:1.04rem}
+ .japan-pay-row span{font-size:.8rem}
+ .japan-pay-row small{max-width:88px;font-size:.68rem;line-height:1.4}
+ .japan-pay-link{font-size:.74rem}
+}
+
 </style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
@@ -542,7 +577,38 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}butto
     <div class="insurance-fee-row"><span>小孩｜1 人 × NT$690</span><strong>NT$690</strong></div>
   </div>
   <div class="hotel-expense-total"><span>💰 保險費用總計</span><strong>NT$3,414</strong></div>
-</section></section><section class="panel extra-panel" id="discount-benefits" hidden><div class="head"><div><h2>各式優惠刷卡退稅</h2><p>優惠資訊・信用卡回饋・日本購物退稅</p></div></div><a class="discount-feature-link" href="https://m.facebook.com/story.php?story_fbid=pfbid0pXTboDVZEmddmdrbnetNpvGF7WZQaZfA335QefXCpKAXLw8pb4iEuyMgQVDDWbyzl&id=100044456585391&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="開啟 Facebook 日本佛系退稅法貼文"><figure class="discount-feature-card"><img src="assets/tax-refund-guide.svg" alt="日本佛系退稅法：商店出示護照、機場退稅流程與現金退稅資訊"><figcaption><strong>日本佛系退稅法</strong><span>點擊圖片查看原始貼文 ↗</span></figcaption></figure></a></section></main><footer class="footer"><div class="shell">沖繩藍海慢活五日｜家族旅行行程手冊 · 手繪行程日誌版<br><a class="admin-entry" href="control-panel.html">資料暫放控制台</a></div></footer>
+</section></section><section class="panel extra-panel" id="discount-benefits" hidden><div class="head"><div><h2>各式優惠刷卡退稅</h2><p>優惠資訊・信用卡回饋・日本購物退稅</p></div></div><section class="japan-card-guide" aria-label="沖繩刷卡支付懶人包">
+  <div class="japan-card-head"><span class="japan-card-kicker">JAPAN PAYMENT GUIDE</span><h3>沖繩刷卡支付懶人包</h3><p>依單筆消費金額挑選回饋，結帳前先看這張</p></div>
+  <section class="japan-pay-group japan-pay-top">
+    <div class="japan-pay-title"><span>🌟🌟🌟</span><h4>最無腦</h4></div>
+    <div class="japan-pay-row"><div><strong>8%</strong><span>永豐日幣卡＋綁 Google Pay</span></div><small>回饋上限標示：1萬台</small></div>
+    <div class="japan-pay-row"><div><strong>6%</strong><span>永豐日幣卡</span></div><small>回饋上限標示：2萬台</small></div>
+    <a class="japan-pay-link" href="https://event.esunbank.com.tw/credit/1120928j_paypay/exclusive_offer.html" target="_blank" rel="noopener noreferrer">便利商店・永旺・大國｜1000¥ 折 200¥，各 1 次 ↗</a>
+    <div class="japan-pay-row"><div><strong>5%</strong><span>玉山錢包＋熊本熊</span></div><small>回饋上限標示：2857台</small></div>
+  </section>
+  <section class="japan-pay-group">
+    <div class="japan-pay-title"><span>🌟🌟</span><h4>單筆消費低於 5,000¥</h4></div>
+    <div class="japan-pay-row"><div><strong>10%</strong><span>全支付＋國泰帳戶</span></div><small>共 2,000 台</small></div>
+    <div class="japan-pay-row"><div><strong>5%</strong><span>玉山錢包＋熊本熊</span></div><small>2,857 台</small></div>
+    <div class="japan-pay-row"><div><strong>8%</strong><span>永豐日幣卡＋綁 Google Pay</span></div><small>1 萬台</small></div>
+    <div class="japan-pay-row"><div><strong>6%</strong><span>永豐日幣卡</span></div><small>2 萬台</small></div>
+    <div class="japan-pay-row"><div><strong>5%</strong><span>全支付＋國泰卡</span></div><small>滿 1,000 台 1 次</small></div>
+    <a class="japan-pay-link" href="https://marketing.pxpayplus.com/pxplus_marketing_page/PayPayEvent_V2" target="_blank" rel="noopener noreferrer">查看全支付 PayPay 活動 ↗</a>
+  </section>
+  <section class="japan-pay-group">
+    <div class="japan-pay-title"><span>🌟🌟</span><h4>單筆消費高於 5,000¥</h4></div>
+    <p class="japan-pay-note">適用情境：唐吉軻德、買跑鞋、大國藥妝等較高額消費</p>
+    <div class="japan-pay-row"><div><strong>8.5%</strong><span>熊本熊特店</span></div><small>上限標示：8,333台</small></div>
+    <a class="japan-pay-link" href="https://www.facebook.com/share/1DWwuxeUsB/" target="_blank" rel="noopener noreferrer">熊本熊特店活動資訊 ↗</a>
+  </section>
+  <section class="japan-pay-group japan-pay-special">
+    <div class="japan-pay-title"><span>🌟🌟</span><h4>單筆消費滿 15,000¥</h4></div>
+    <div class="japan-pay-row"><div><strong>10%</strong><span>全支付＋國泰卡</span></div><small>滿 3,000 台加碼</small></div>
+    <a class="japan-pay-link" href="https://marketing.pxpayplus.com/pxplus_marketing_page/PayPayEvent_V2" target="_blank" rel="noopener noreferrer">查看全支付加碼活動 ↗</a>
+  </section>
+  <p class="japan-pay-footnote">※ 以上回饋比例、門檻與上限依你提供的優惠整理；實際適用資格、登錄方式、活動期間及回饋上限，請以各活動頁面與銀行最新公告為準。</p>
+</section>
+<a class="discount-feature-link" href="https://m.facebook.com/story.php?story_fbid=pfbid0pXTboDVZEmddmdrbnetNpvGF7WZQaZfA335QefXCpKAXLw8pb4iEuyMgQVDDWbyzl&id=100044456585391&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="開啟 Facebook 日本佛系退稅法貼文"><figure class="discount-feature-card"><img src="assets/tax-refund-guide.svg" alt="日本佛系退稅法：商店出示護照、機場退稅流程與現金退稅資訊"><figcaption><strong>日本佛系退稅法</strong><span>點擊圖片查看原始貼文 ↗</span></figcaption></figure></a></section></main><footer class="footer"><div class="shell">沖繩藍海慢活五日｜家族旅行行程手冊 · 手繪行程日誌版<br><a class="admin-entry" href="control-panel.html">資料暫放控制台</a></div></footer>
 <script>
 const initial=[{"day":1,"date":"2026-11-15","dateLabel":"11/15（日）","title":"初見沖繩｜抵達那霸","summary":"搭乘 IT796 抵達那霸，首晚以晚餐、入住與休息為主，不安排密集景點。","routeName":"那霸機場 → 福州園 Garden Cafe → APA Hotel","routeQuery":"Naha Airport Okinawa;Fukushuen Garden Cafe Naha;APA Hotel Naha Kuko Wakasa","stops":[{"time":"17:50","name":"那霸機場抵達","note":"搭乘台灣虎航 IT796；入境、領行李後分乘 2 台計程車，直接前往福州園 GARDEN。晚餐後再入住飯店。","status":"已知資訊"},{"time":"約 18:45","name":"福州園 GARDEN 晚餐首選／飯店內「楽人」備案","note":"晚餐首選：福州園 GARDEN，先用餐再入住。若現場位置不足，改至飯店內「楽人」用餐。","status":"首選／備案"},{"time":"21:00","name":"飯店樓下超商採買","note":"預計 21:00 到樓下超商購買需求用品與隔日早餐。","status":"預計安排"}],"stay":"APA Hotel Naha Kuko Wakasa"},{"day":2,"date":"2026-11-16","dateLabel":"11/16（一）","title":"南部探索｜一路北上名護","summary":"從南部出發，走玉泉洞與奧武島玻璃船，接著在島上享用特色海鮮午餐，再到 JA やんばる市場，北上入住名護。晚餐在琉之國本店與 TOPU 之間二選一。","routeName":"APA Hotel → 玉泉洞 → 奧武島玻璃船 → 奧武島海鮮午餐 → JA やんばる市場 → Sunset Resort","routeQuery":"APA Hotel Naha Kuko Wakasa;Gyokusendo Okinawa;Ojima Island Nanjo Okinawa glass boat;Ojima Island Nanjo Okinawa seafood lunch;JA Yanbaru Market Nago;Sunset Resort Canphou by Coldio Premium","stops":[{"time":"上午","name":"Relaxレンタカー 若狹店取車","note":"Toyota Voxy；取車安排在 11/16。確切取車時間待確認。","status":"已知安排"},{"time":"待確認","name":"玉泉洞","note":"南部主要景點；停留時間與票券資訊待核對。","status":"景點已列入"},{"time":"待確認","name":"奧武島玻璃船","note":"需確認班次、海況與營運時間。","status":"待確認"},{"time":"午餐","name":"奧武島特色海鮮午餐","note":"玻璃船體驗後到奧武島漁港用餐，安排現炸海鮮與島上特色料理；依現場營業與候位情況調整。","status":"午餐安排"},{"time":"待確認","name":"JA やんばる市場","note":"北上途中採買與補給。","status":"景點已列入"},{"time":"晚餐","name":"琉之國本店／TOPU（二選一）","note":"晚餐候選，尚未決定最終選項。","status":"待決定"},{"time":"晚間","name":"唐吉訶德","note":"依體力與營業時間安排採買。","status":"彈性行程"}],"stay":"Sunset Resort Canphou by Coldio Premium"},{"day":3,"date":"2026-11-17","dateLabel":"11/17（二）","title":"海洋探索與親子創作","summary":"上午探索美麗海水族館；中午分組活動，爸爸媽媽與小朋友體驗風獅爺 DIY，爺爺奶奶彈性休息；下午全家會合前往翡翠海灘散步拍照，傍晚採買後回住宿自煮。","routeName":"Sunset Resort → 美麗海水族館 → Maimai Shisa → 翡翠海灘 → 海洋博公園 P8 → THE BIG EXPRESS → Sunset Resort","routeQuery":"Sunset Resort Canphou by Coldio Premium;Okinawa Churaumi Aquarium;Maimai Shisa Okinawa;Emerald Beach Okinawa Motobu;Okinawa Ocean Expo Park P8;THE BIG EXPRESS Motobu","stops":[{"time":"上午","name":"美麗海水族館","note":"當日主要景點；安排館內參觀、黑潮探險與海豚表演，依時間順序體驗。","status":"已知安排"},{"time":"12:00","name":"INOH 午餐","note":"午餐可選擇館內／園區用餐，或開車外出用餐；依現場候位與全家狀況彈性決定。","status":"彈性安排"},{"time":"13:30–15:30","name":"Maimai Shisa 風獅爺 DIY","note":"爸爸、媽媽與小朋友前往 Maimai Shisa 進行親子風獅爺創作；爺爺奶奶同時段可回飯店休息，或前往附近的熱帶夢想中心走走。","status":"待確認預約"},{"time":"16:00–17:00","name":"翡翠海灘（エメラルドビーチ）","note":"15:30–16:00 全家會合並前往翡翠海灘，16:00–17:00 安排海邊散步、拍照與休息。","status":"已知安排"},{"time":"下午","name":"海洋博公園 P8／Aqua Town","note":"依原行程中的園區活動與停車安排執行；如時間充裕可彈性停留，Aqua Town 詳細位置仍需核對。","status":"彈性安排"},{"time":"17:00","name":"THE BIG EXPRESS 本部店","note":"採買晚餐食材與隔日用品，完成後返回住宿自煮。","status":"已知安排"}],"stay":"Sunset Resort Canphou by Coldio Premium"},{"day":4,"date":"2026-11-18","dateLabel":"11/18（三）","title":"名護森林公園 × 美國村","summary":"上午在名護 21 世紀之森公園玩鯨鯊造型遊具，大人到海景 Starbucks 休息；中午南下美國村吃塔可飯、逛藥妝與生活雜貨，傍晚沿海散步後返回那霸住宿。","routeName":"Sunset Resort → 名護 21 世紀之森公園／Starbucks → 美國村（Kijimunaa）→ 美國村海濱 → Glory Island Okinawa SOBE","routeQuery":"Sunset Resort Canphou by Coldio Premium;Nago 21st Century Forest Park;Kijimunaa Depot Island Okinawa;American Village Okinawa;Glory Island Okinawa SOBE","stops":[{"time":"上午｜約 2 小時","name":"名護 21 世紀之森公園＋Starbucks","note":"先讓小朋友玩鯨鯊造型遊具與親子遊戲區，大人可到 Starbucks 名護 21 世紀之森公園あけみおてらす店看海、喝咖啡。公園與咖啡店安排同一站，依孩子體力彈性調整。","status":"已知安排"},{"time":"12:00 出發｜約 60 分鐘車程","name":"前往美國村・塔可飯午餐","note":"預計 13:00 左右抵達美國村。首選 Kijimunaa（きじむなぁ）吃沖繩塔可飯；若候位或座位不合適，改到 A Sign Taco Rice；再不方便則以 Hama Sushi 作備案。四大一小依現場候位與座位彈性決定。","status":"首選＋備案"},{"time":"下午","name":"美國村逛街採買","note":"午餐後在美國村自由逛街，預計安排 DAIKOKU DRUG 藥妝與 Seria 百元商店；購物時間依長輩與小朋友體力調整。","status":"已知安排"},{"time":"傍晚","name":"美國村海濱散步・拍照","note":"沿著海濱步道散步、拍照與休息，不硬性安排活動；依當天天色、天候及全家體力決定停留時間。","status":"彈性安排"},{"time":"晚間","name":"Glory Island Okinawa SOBE","note":"開車返回那霸，入住 Glory Island Okinawa SOBE；2 間房，","status":"住宿已列入"}],"stay":"Glory Island Okinawa SOBE"},{"day":5,"date":"2026-11-19","dateLabel":"11/19（四）","title":"返程日｜分流前往機場","summary":"租車組先完成還車，長輩與小孩可依行李和體力分流前往機場，約 10:45–11:00 會合；IT797 13:30 起飛。","routeName":"Glory Island → Relaxレンタカー 若狹店／那霸機場","routeQuery":"Glory Island Okinawa SOBE;Relax Rent-a-car Wakasa Naha;Naha Airport Okinawa","stops":[{"time":"退房後","name":"行李整理與退房","note":"先確認行李、證件與航班資訊。","status":"已知安排"},{"time":"10:00 前","name":"Relaxレンタカー 若狹店還車","note":"Toyota Voxy；需預留加油、驗車與接駁時間。","status":"已知目標時間"},{"time":"約 10:45–11:00","name":"那霸機場會合","note":"租車組與長輩／小孩組會合；分流交通方式需按當日行李量確認。","status":"已知安排"},{"time":"13:30","name":"IT797 起飛","note":"回程航班；建議再次核對航空公司報到截止時間。","status":"已知資訊"}],"stay":"返台"}];
 const routeSegments = {

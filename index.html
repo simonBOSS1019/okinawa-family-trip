@@ -589,7 +589,7 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const maps=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q+" Okinawa Japan");
 function renderTabs(){tabs.innerHTML=data.map((d,i)=>`<div class="daytab-wrap ${viewMode==="day"&&i===selected?'active':''}"><button class="daytab" data-i="${i}"><strong>DAY ${i+1}</strong><small>${esc(d.dateLabel)}</small><small class="day-title">${esc(d.title.split("｜")[0])}</small></button></div>`).join("")+`<div class="daytab-wrap utility ${viewMode==="info"?'active':''}"><button class="daytab" data-view="info"><strong>重要資訊</strong><small>航班・交通・住宿・保險・待確認</small></button></div><div class="daytab-wrap utility ${viewMode==="cost"?'active':''}"><button class="daytab" data-view="cost"><strong>費用計算</strong><small>租車附加費・旅費預算</small></button></div><div class="daytab-wrap utility ${viewMode==="discount"?'active':''}"><button class="daytab" data-view="discount"><strong>各式優惠刷卡退稅</strong><small>優惠資訊・信用卡・日本退稅</small></button></div>`;tabs.querySelectorAll("[data-i]").forEach(b=>b.onclick=()=>{selected=+b.dataset.i;showView("day")});tabs.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>showView(b.dataset.view))}
 const departurePlans = [
- {time:"13:20",timeLabel:"準時出發",main:"從家裡開車出發",memo:"開車前往台南機場。"},
+ {time:"13:00",timeLabel:"準時出發",main:"從家裡開車出發",memo:"開車前往台南機場。"},
  {time:"09:15",timeLabel:"準時出發",main:"飯店後方停車場集合",memo:"接送大家上車，09:15 準時出發。"},
  {time:"08:05",timeLabel:"準時出發",main:"從住宿出發前往美麗海",memo:"抵達後停放 P7 北口停車場，再步行前往水族館。"},
  {time:"09:00",timeLabel:"準時出發",main:"從住宿出發",memo:"第一站：Starbucks 吃早午餐。"},

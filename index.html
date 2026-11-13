@@ -485,6 +485,28 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}butto
  .japan-pay-link{font-size:.74rem}
 }
 
+
+/* Clear compact rebate-cap badges for the top recommended payment options */
+.japan-pay-top .japan-pay-row{align-items:center;gap:12px}
+.japan-pay-top .japan-pay-row>div{flex:1;min-width:0}
+.japan-pay-top .japan-pay-row small.japan-pay-limit{
+  display:flex;flex:none;flex-direction:column;align-items:center;justify-content:center;
+  gap:2px;min-width:76px;max-width:none;padding:6px 9px;
+  border:1px solid #d9e3d3;border-radius:10px;background:#e8efe2;
+  color:#72816c;text-align:center;line-height:1.25;
+}
+.japan-pay-top .japan-pay-limit span{font-size:.62rem;letter-spacing:.04em}
+.japan-pay-top .japan-pay-limit b{color:#58745e;font-size:.82rem;font-weight:850;font-variant-numeric:tabular-nums}
+@media(max-width:480px){
+ .japan-pay-top .japan-pay-row{gap:8px}
+ .japan-pay-top .japan-pay-row>div{gap:6px}
+ .japan-pay-top .japan-pay-row strong{min-width:43px}
+ .japan-pay-top .japan-pay-row span{font-size:.78rem}
+ .japan-pay-top .japan-pay-row small.japan-pay-limit{min-width:70px;padding:6px 7px}
+ .japan-pay-top .japan-pay-limit span{font-size:.59rem}
+ .japan-pay-top .japan-pay-limit b{font-size:.78rem}
+}
+
 </style></head><body>
 <header class="hero" id="top"><div class="shell inner"><img class="hero-art" src="assets/cover.png" alt="沖繩藍海慢活五日家庭旅行手繪封面"><nav class="days quick-days" id="tabs" aria-label="每日行程快速選單"></nav></div></header>
 <main class="shell" id="itinerary-detail">
@@ -581,10 +603,10 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}butto
   <div class="japan-card-head"><span class="japan-card-kicker">JAPAN PAYMENT GUIDE</span><h3>沖繩刷卡支付懶人包</h3><p>依單筆消費金額挑選回饋，結帳前先看這張</p></div>
   <section class="japan-pay-group japan-pay-top">
     <div class="japan-pay-title"><span>🌟🌟🌟</span><h4>最無腦</h4></div>
-    <div class="japan-pay-row"><div><strong>8%</strong><span>永豐日幣卡＋綁 Google Pay</span></div><small>回饋上限標示：1萬台</small></div>
-    <div class="japan-pay-row"><div><strong>6%</strong><span>永豐日幣卡</span></div><small>回饋上限標示：2萬台</small></div>
+    <div class="japan-pay-row"><div><strong>8%</strong><span>永豐日幣卡＋綁 Google Pay</span></div><small class="japan-pay-limit"><span>回饋上限</span><b>1 萬台</b></small></div>
+    <div class="japan-pay-row"><div><strong>6%</strong><span>永豐日幣卡</span></div><small class="japan-pay-limit"><span>回饋上限</span><b>2 萬台</b></small></div>
     <a class="japan-pay-link" href="https://event.esunbank.com.tw/credit/1120928j_paypay/exclusive_offer.html" target="_blank" rel="noopener noreferrer">便利商店・永旺・大國｜1000¥ 折 200¥，各 1 次 ↗</a>
-    <div class="japan-pay-row"><div><strong>5%</strong><span>玉山錢包＋熊本熊</span></div><small>回饋上限標示：2857台</small></div>
+    <div class="japan-pay-row"><div><strong>5%</strong><span>玉山錢包＋熊本熊</span></div><small class="japan-pay-limit"><span>回饋上限</span><b>2,857 台</b></small></div>
   </section>
   <section class="japan-pay-group">
     <div class="japan-pay-title"><span>🌟🌟</span><h4>單筆消費低於 5,000¥</h4></div>

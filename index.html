@@ -698,7 +698,7 @@ function departureCard(d,index){
  const p=departurePlans[index];
  const details=p.groups
   ? `<div class="departure-groups">${p.groups.map(g=>`<div class="departure-group"><strong>${esc(g.label)}</strong><span>${esc(g.note)}</span></div>`).join("")}</div>`
-  : `<div class="departure-main">${esc(p.main)}</div><div class="departure-note">${esc(p.memo)}</div>`;
+  : `<${index===1?"a class=\"departure-main\" href=\"https://maps.app.goo.gl/ZjQ6b5KE3BqUMC5K6?g_st=ac\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"text-decoration:underline;text-underline-offset:3px\"":"div class=\"departure-main\""}>${esc(p.main)}${index===1?" ↗":""}</${index===1?"a":"div"}><div class="departure-note">${esc(p.memo)}</div>`;
  return `<section class="departure-card" aria-label="DAY ${index+1} 出發資訊">
   <div class="departure-date"><span>${esc(d.dateLabel)}</span><span>DAY ${index+1}</span></div>
   <div class="departure-layout">
